@@ -2913,15 +2913,15 @@ body.video_pop_open .video_pop{visibility: visible}
 	color:#333;
 }
 .category-nav-d2 {
-	background-color:#edeff0;
-	/*
 	overflow-y:hidden;
-		-webkit-transition-property : all; -webkit-transition-duration : .5s; -webkit-transition-timing-function : cubic-bezier(0, 1, 0.5, 1);
-		transition-property : all; transition-duration : .5s; transition-timing-function : cubic-bezier(0, 1, 0.5, 1);*/
+	background-color:#edeff0;
+	-webkit-transition-property : all; -webkit-transition-duration : .2s; -webkit-transition-timing-function : cubic-bezier(0, 1, 0.5, 1);
+	transition-property : all; transition-duration : .2s; transition-timing-function : cubic-bezier(0, 1, 0.5, 1);
 	}
-	.category-nav-d1-item:not(.is-active) .category-nav-d2 {
-	
-	}
+.category-nav-d1.is-active .category-nav-d2 {
+	-webkit-transition-duration : .3s;
+	transition-duration : .3s; 
+}
 /* category Navigation 아래 추천 기획전 */
 .categoryRecom-list {
 	

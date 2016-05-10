@@ -289,26 +289,28 @@
 <script>
 	if($('.category-nav')){
 		
-		/*
 		$('.category-nav-d2').each(function(){
-					$(this).css('height', $(this).outerHeight());
-					$(this).css('max-height', 0);
-				});
-				$('.category-nav-d1-a').on('click', function(){
-					var categoryItem = $(this).parent(),
-						categoryDep2 = $(this).next('.category-nav-d2'),
-						isActive = 'is-active';
-					if(categoryItem.hasClass(isActive)){
-						categoryItem.removeClass(isActive);
-						categoryDep2.css('max-height', 0);				
-					} else {
-						categoryItem.addClass(isActive);
-						categoryDep2.css('max-height', '100%');
-					}
-					
-				});*/
+			$(this).data( 'h', $(this).outerHeight() );
+      $(this).css('max-height', 0);
+		});
+		$('.category-nav-d1-a').on('click', function(){
+			var categoryItem = $(this).parent(),
+				  categoryDep2 = $(this).next('.category-nav-d2'),
+				  isActive = 'is-active';
+			if(categoryItem.hasClass(isActive)){
+				categoryItem.removeClass(isActive);
+				categoryDep2.css('max-height', 0);				
+			} else {
+        var eleOld = categoryItem.siblings('.'+ isActive);
+        eleOld.find('.category-nav-d2').css('max-height', 0);
+        eleOld.removeClass(isActive);
+				categoryItem.addClass(isActive);
+				categoryDep2.css('max-height', categoryDep2.data('h'));
+			}
+			
+		});
 		 
-		$('.category-nav-d2').hide();
+		/*$('.category-nav-d2').hide();
 		$('.category-nav-d1-a').on('click', function(e){
 			var categoryItem = $(this).parent(),
 				categoryDep2 = $(this).next('.category-nav-d2'),
@@ -323,7 +325,7 @@
 				categoryItem.addClass(isActive);
 				categoryDep2.slideDown('fast');
 			}
-		});
+		});*/
 		
 		
 	}
