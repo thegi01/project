@@ -2915,8 +2915,8 @@ body.video_pop_open .video_pop{visibility: visible}
 .category-nav-d2 {
 	overflow-y:hidden;
 	background-color:#edeff0;
-	-webkit-transition-property : all; -webkit-transition-duration : .4s; -webkit-transition-timing-function : cubic-bezier(0.48, 0.88, 0.49, 0.71);
-	transition-property : all; transition-duration : .4s; transition-timing-function : cubic-bezier(0.48, 0.88, 0.49, 0.71);
+	-webkit-transition-property : all; -webkit-transition-duration : .4; -webkit-transition-timing-function : cubic-bezier(0, 1, 0.5, 1);
+	transition-property : all; transition-duration : .4s; transition-timing-function : cubic-bezier(0, 1, 0.5, 1);
 	}
 .category-nav-d1.is-active .category-nav-d2 {
 }
