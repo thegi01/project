@@ -234,7 +234,9 @@
           categoryDep2Item = categoryDep2.children,
           categoryDep2H = Math.ceil(categoryDep2Item.length/2),
           isActive = 'is-active';
-      categoryDep2.dataset.h = categoryDep2H * categoryDep2Item[0].offsetHeight;
+      if(!categoryDep2.dataset.h) {
+        categoryDep2.dataset.h = categoryDep2H * categoryDep2Item[0].offsetHeight;
+      }
       if(categoryItem.classList.contains(isActive)){
         categoryItem.classList.remove(isActive);
         categoryDep2.style.maxHeight = 0;        
