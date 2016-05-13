@@ -10,7 +10,12 @@
 	<title>HTML</title>
 	<meta name="description" content="">
 	<meta name="author" content="FIC01054">
+
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	<link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources_new/css/common.css" /> 
 </head>
@@ -22,22 +27,10 @@
 <div id="wrap" class="category">
 	<div id="container" class="main"><!-- container -->
 		<header class="sub_header"><!-- header -->
-			<h1>상품상세<a href="#header-breadcrumb" class="ico icon-arrow btn-breadcrumb-view">현재 위치 보기</a></h1>
+			<h1>카테고리</h1>
 			<button type="button" class="btn_back">이전</button>
 			<span class="btn_home"><a href="#">홈</a></span>
 		</header><!-- //header -->
-		
-		<!-- breadcrumb -->
-		<h2 class="blind">현재 위치</h2>
-		<div id="header-breadcrumb" class="breadcrumb header-breadcrumb global-space">
-			<ul class="breadcrumb-list">
-				<li class="breadcrumb-item">패션</i></li>
-				<li class="breadcrumb-item">여성의류</li>
-				<li class="breadcrumb-item">아우터</li>
-			</ul>
-		</div>
-		<!-- //breadcrumb -->
-		
 		<div id="searchBar" class="search_area">
 			<div class="form_search">
 				<input type="search" placeholder="상품명을 입력하세요." />
@@ -46,78 +39,220 @@
 			<div class="search_close"><div><a href="#">닫기</a></div></div><!--그랜드오픈 수정 닫기버튼 a태그로 변경 -->
 		</div><!-- //search_area -->
 		<section id="contents" class="contents"><!-- contents -->
-						
 			
-			
-			<h2 class="blind">여성의류</h2>
-				
-			<!-- nav-border -->	
-			<nav class="nav-border">
-				<ul class="swiper-wrapper">
-					<li class="swiper-slide grid">
-						<a href="#href" class="nav-border-a col s3 is-active">menu1</a>
-						<a href="#href" class="nav-border-a col s3">menu2</a>
-						<a href="#href" class="nav-border-a col s3">menu3</a>
-						<a href="#href" class="nav-border-a col s3">menu4</a>
-					</li>
-					<li class="swiper-slide grid">
-						<a href="#href" class="nav-border-a col s3">menu5</a>
-						<a href="#href" class="nav-border-a col s3">menu6</a>
-						<a href="#href" class="nav-border-a col s3">menu7</a>
-						<a href="#href" class="nav-border-a col s3">menu8</a>
-					</li>
-				</ul>
-				<a class="swiper-button-prev" href="javascript:">prev</a>
-				<a class="swiper-button-next" href="javascript:">next</a>
-			</nav>
-			<!-- //nav-border -->
-			
-			<!-- 상품 목록 --> <!-- 디자인 변경 없음. 마크업만 추후 시간이 날 경우 변경..일단 보류 -->
-			<h3 class="blind">상품 목록</h3>
-			<div class="goods-lists" style="height:1000px">
-				<div class="goods-lists-header">
-					<p class="goods-lists-header-count"><em>1,500</em>개 상품</p>
-					<h4 class="blind">정렬 선택</h4>
-					<div class="sort-data">						
-						<ul class="sort-data-list">
-							<li class="sort-data-item is-active"><a href="#href" class="sort-data-a">추천순</a><i class="blind">선택됨</i></li>
-							<li class="sort-data-item"><a href="#href" class="sort-data-a">날짜순</a></li>
-						</ul>
-					</div>
-					<h4 class="blind">스킨 선택</h4>
-					<div class="sort-skin">						
-						<ul class="sort-skin-list">
-							<li class="sort-skin-item is-active"><a href="#href" class="sort-skin-a"><span class="ico icon-sort icon-sort-type">격자형</span></a><i class="blind">선택됨</i></li>
-							<li class="sort-skin-item"><a href="#href" class="sort-skin-a"><span class="ico icon-sort icon-sort-type">목록형</span></a></li>
-						</ul>
-					</div>
-				</div>
-				<h4 class="blind">목록</h4>
-				<ul class="list-thumb grid">
-					<li class="list-thumb-item col s3">
-						<a href="#href" class="list-thumb-a">
-							<img src="" class="list-thumb-img" alt="이미지 설명">
-							<p class="goods-name list-thumb-goods-name">상품명</p>
-							<dl class="price list-thumb-price">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-detail">
-									<span class="price-real"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-original"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
-							<div class="benefit list-thumb-benefit">
-								<dl class="benefit-save">
-									<dt class="icon-fill">적립금</dt><dd>1000</dd>
-								</dl>
-								<dl class="benefit-noint">
-									<dt class="blind">무이자 개월수</dt><dd>3</dd>
-								</dl>
-							</div>
+			<!-- Navigatin Category -->
+			<!-- gird remove ???? -->
+			<h2 class="blind">카테고리</h2>			
+			<nav class="nav-accordion">
+				<ul class="nav-accordion-d1">
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-fashion"></span>
+							<span class="nav-accordion-title">패션</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
 						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">여성의류</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">남성의류</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">언더웨어</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-miscellaneous"></span>
+							<span class="nav-accordion-title">잡화</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">패션슈즈</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">잡화</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">시계/쥬얼리</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-beauty"></span>
+							<span class="nav-accordion-title">뷰티</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">화장품</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">이미용품</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">이미용기기</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-food"></span>
+							<span class="nav-accordion-title">식품</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">농산물</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">수산물</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">축산물</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">가공식품</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">건강식품</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-kitchen"></span>
+							<span class="nav-accordion-title">주방</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">주방가전</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">주방용품</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-life"></span>
+							<span class="nav-accordion-title">생활</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">생활/잡화</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">교육문화</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-furniture"></span>
+							<span class="nav-accordion-title">가구/침구</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">가구</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">침구/침장</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-health"></span>
+							<span class="nav-accordion-title">건강/레저</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">스포츠레저캠핑</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">생활/잡화</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">건강/헬스</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">교육문화</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">여행/예약서비스</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">보험금융</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">렌탈및기타서비스</a></li>
+						</ul>
+					</li>
+					<li class="nav-accordion-d1-item">
+						<a href="#href" class="nav-accordion-d1-a">
+							<span class="ico icon-category icon-category-electric"></span>
+							<span class="nav-accordion-title">가전</span>
+							<span class="ico icon-arrow nav-accordion-icon"></span>
+						</a>
+						<ul class="nav-accordion-d2 grid">
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">전체보기</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">생활가전</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">대형가전</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">M/M</a></li>
+							<li class="nav-accordion-d2-item col s3"><a href="#href" class="nav-accordion-d2-a">렌탈및기타서비스</a></li>
+						</ul>
 					</li>
 				</ul>
+			</nav>
+			
+			<!-- 추천 기획전 -->	
+			<div class="h3-pill global-space">
+				<h3 class="h3-pill-title">추천기획전</h3>
 			</div>
-			<!-- //상품 목록 -->
+			<ul class="list-border"> <!-- naming naming think -->
+				<li class="list-border-item">
+					<a href="#href" class="list-border-a">
+						<p class="list-border-txt-area">
+							<em class="list-border-sjt">여유</em>
+							<span class="list-border-txt">THE SLOW LIFE 여유 런칭 THE SLOW LIFE 여유 런칭 THE SLOW LIFE 여유 런칭</span>
+						</p>
+						<span class="ico icon-arrow icon-arrow-right-gray icon-small"></span>
+					</a>
+				</li>
+				<li class="list-border-item">
+					<a href="#href" class="list-border-a">
+						<p class="list-border-txt-area">
+							<em class="list-border-sjt">릴레이 한정 특가</em>
+							<span class="list-border-txt">호두파운드+잉글리쉬 파운드</span>
+						</p>
+						<span class="ico icon-arrow icon-arrow-right-gray icon-small"></span>
+					</a>
+				</li>
+				<li class="list-border-item">
+					<a href="#href" class="list-border-a">
+						<p class="list-border-txt-area">
+							<em class="list-border-sjt">기부米</em>
+							<span class="list-border-txt">수익금, 전액 기부합니다.</span>
+						</p>
+						<span class="ico icon-arrow icon-arrow-right-gray icon-small"></span>
+					</a>
+				</li>
+				<li class="list-border-item">
+					<a href="#href" class="list-border-a">
+						<p class="list-border-txt-area">
+							<em class="list-border-sjt">펫 상품전!</em>
+							<span class="list-border-txt">반려견을 위해 준비하세요.</span>
+						</p>
+						<span class="ico icon-arrow icon-arrow-right-gray icon-small"></span>
+					</a>
+				</li>
+				<li class="list-border-item">
+					<a href="#href" class="list-border-a">
+						<p class="list-border-txt-area">
+							<em class="list-border-sjt">비디오픽</em>
+							<span class="list-border-txt">맛며느리가 맛 봐드립니다.</span>
+						</p>
+						<span class="ico icon-arrow icon-arrow-right-gray icon-small"></span>
+					</a>
+				</li>
+			</ul>
+			<!-- //추천 기획전 -->
+			
+			
+			<!-- Grid : 20160510 -->
+			<!-- <div class="grid">
+				<div class="col s1">col s1</div>
+				<div class="col s1">col s1</div>
+				<div class="col s1">col s1</div>
+				<div class="col s1">col s1</div>
+				<div class="col s1">col s1</div>
+				<div class="col s1">col s1</div>
+				
+				<div class="col s2">col s2</div>
+				<div class="col s2">col s2</div>
+				<div class="col s2">col s2</div>
+				
+				<div class="col s3">col s3</div>
+				<div class="col s3">col s3</div>
+				<div class="col s3">col s3</div>
+				<div class="col s3">col s3</div>
+				<div class="col s3">col s3</div>
+				<div class="col s3">col s3</div>
+							
+				<div class="col s4">col s4</div>
+				
+				<div class="col s5">col s5</div>
+				
+				<div class="col s6">col s6</div>
+			</div> -->
+			<!-- //Grid -->
+			
+			
+			
 			
 		</section><!-- //contents -->
         <!-- 푸터영역 -->
@@ -136,22 +271,41 @@
 <script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
 <script type="text/javascript" src="../../resources_new/js/jquery-mobile-ui.js"></script>
 <script>
-
-	$('.btn-breadcrumb-view').on('click', function(e){
-		var headerBreadcrumb = $('#header-breadcrumb'),
-			isVisible = 'is-visible';
-		if(headerBreadcrumb.is(':visible')) {
-			headerBreadcrumb.removeClass(isVisible);
-			headerBreadcrumb.removeAttr('tabIndex');
-			$(this).focus();
-		} else {
-			headerBreadcrumb.addClass(isVisible);
-			headerBreadcrumb.attr('tabIndex', '0');
-			headerBreadcrumb.focus();
-		}
+	
+	
+	if(jQuery('.nav-accordion')){
+		// Dept2 Item 홀수인 경우 짝수로 맞춤
+		jQuery('.nav-accordion-d2').each(function(){
+			var itemLen = $(this).find('.nav-accordion-d2-item').length,
+				t = '<li class="nav-accordion-d2-item col s3"></li>';
+			if(itemLen%2 == 1) {
+				$(this).append(t);
+			}
+		});
+		// Navigation Accordion  
+		jQuery('.nav-accordion-d2').hide();
+		jQuery('.nav-accordion-d1-a').on('click', function(e){
+			var accordionItem = jQuery(this).parent(),
+				accorionDep2 = jQuery(this).next('.nav-accordion-d2'),
+				isActive = 'is-active';
+			if(accordionItem.hasClass(isActive)){
+				accordionItem.removeClass(isActive);
+				accorionDep2.slideUp('fast');
+			} else {
+				var itemOld = accordionItem.siblings('.'+ isActive);
+				itemOld.find('.nav-accordion-d2').hide();
+				itemOld.removeClass(isActive);
+				accordionItem.addClass(isActive);
+				accorionDep2.slideDown('fast');
+			}
+		});
 		
-	});
-
+		 		
+		
+		
+		
+		
+	}
 </script>
 </body>
 </html>
