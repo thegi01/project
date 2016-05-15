@@ -37,42 +37,42 @@
 						
 			<h2 class="blind">전체상품</h2>
 			
-			<!-- nav-border -->	
-			<nav class="nav-border">
-				<div class="nav-border-list swiper-wrapper">
-					<div class="nav-border-col swiper-slide">
-						<div class="nav-border-item"><a href="#href" class="nav-border-a is-active">전체상품</a></div> <!-- 활성화된 메뉴에 is-active 클래스 추가 -->
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">여성의류</a></div>
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">남성의류</a></div>
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">언더웨어</a></div>
+			<!-- nav-horizontal-->	
+			<nav class="nav-horizontal">
+				<div class="nav-horizontal-list swiper-wrapper">
+					<div class="nav-horizontal-col swiper-slide grid">
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a is-active">전체상품</a></div> <!-- 활성화된 메뉴에 is-active 클래스 추가 -->
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">여성의류</a></div>
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">남성의류</a></div>
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">언더웨어</a></div>
 					</div>
-					<div class="nav-border-col swiper-slide">
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">Menu5</a></div>
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">Menu6</a></div>
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">Menu7</a></div>
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">Menu8</a></div>
+					<div class="nav-horizontal-col swiper-slide">
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">Menu5</a></div>
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">Menu6</a></div>
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">Menu7</a></div>
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">Menu8</a></div>
 					</div>
-					<div class="nav-border-col swiper-slide">
-						<div class="nav-border-item"><a href="#href" class="nav-border-a">Menu9</a></div>
+					<div class="nav-horizontal-col swiper-slide">
+						<div class="nav-horizontal-item col s3"><a href="#href" class="nav-horizontal-a">Menu9</a></div>
 					</div>
 				</div>				
-				<div class="nav-border-swiper-pagination"></div>
+				<div class="nav-horizontal-swiper-pagination"></div>
 			</nav>
 
-			<!-- <nav class="nav-border">
-				<ul class="nav-border-list swiper-wrapper">
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu1</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu2</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu3</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu4</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu5</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu6</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu7</a></li>
-					<li class="nav-border-item swiper-slide"><a href="#href" class="nav-border-a">menu8</a></li>
+			<!-- <nav class="nav-horizontal">
+				<ul class="nav-horizontal-list swiper-wrapper">
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu1</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu2</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu3</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu4</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu5</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu6</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu7</a></li>
+					<li class="nav-horizontal-item swiper-slide"><a href="#href" class="nav-horizontal-a">menu8</a></li>
 				</ul>
-				<div class="nav-border-swiper-pagination"></div>
+				<div class="nav-horizontal-swiper-pagination"></div>
 			</nav> -->
-			<!-- //nav-border -->
+			<!-- //nav-horizontal-->
 
 			<!-- 추천기획전 -->
 			<div class="h3-pill global-space">
@@ -295,13 +295,13 @@
 <script type="text/javascript" src="../../resources_new/js/jquery-mobile-ui.js"></script>
 <script>
 
-    var swiperNavCategory = new Swiper('.nav-border', {
-        pagination: '.nav-border-swiper-pagination',
+    var swiperNavCategory = new Swiper('.nav-horizontal', {
+        pagination: '.nav-horizontal-swiper-pagination',
         paginationClickable: true,
         spaceBetween: 0
     });
-	/*var swiperNavCategory = new Swiper('.nav-border', {
-        pagination: '.nav-border-swiper-pagination',
+	/*var swiperNavCategory = new Swiper('.nav-horizontal', {
+        pagination: '.nav-horizontal-swiper-pagination',
         slidesPerView: 2,
         slidesPerColumn: 2,
         paginationClickable: true,
