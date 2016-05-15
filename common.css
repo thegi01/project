@@ -2957,7 +2957,7 @@ body.video_pop_open .video_pop{visibility: visible}
  	
 }
 .nav-horizontal-col { 
-	overflow: hidden;s
+	overflow: hidden;
 	position: relative;	
  	min-height: 61px;
  	border-bottom: solid 1px #f5f5f5;
@@ -3034,6 +3034,7 @@ body.video_pop_open .video_pop{visibility: visible}
 	
 }
 .nav-category-d2 {
+	display: none;
 	clear: both;
 }
 .nav-category-d2:before {
