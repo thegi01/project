@@ -389,7 +389,7 @@
 		});
 		*/
 		// jQuery('.category-nav-d2').hide();
-		jQuery('.category-nav-d1-a').on('touchstart click', function(e){
+		jQuery('.category-nav-d1-a').on('touchstart', function(e){
 			e.stopPropagation(); 
 			var navCategory = jQuery(this).parents('.category-nav'),
 				accordionItem = jQuery(this).parent(),
