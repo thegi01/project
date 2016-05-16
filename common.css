@@ -2950,13 +2950,13 @@ body.video_pop_open .video_pop{visibility: visible}
  * nav-border
  * used : category list view 
  */
-.nav-horizontal {
+.nav-horizon {
  	background-color: #fff;
 }
-.nav-horizontal-list {
+.nav-horizon-list {
  	
 }
-.nav-horizontal-col { 
+.nav-horizon-col { 
 	overflow: hidden;
 	position: relative;	
  	min-height: 61px;
@@ -2964,46 +2964,46 @@ body.video_pop_open .video_pop{visibility: visible}
  	border-left:solid 10px transparent; border-right:solid 10px transparent;
  	-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
 }
-.nav-horizontal-col:after {
+.nav-horizon-col:after {
 	content: '';
 	position: absolute; top: 50%; left:0; right: 0;
 	height: 1px;
 	margin-top: -1px;
 	background-color: #f5f5f5;
 }
-.nav-horizontal-item {
+.nav-horizon-item {
 	float: left;
  	width: 50%; height:30px;
  	line-height: 30px;
  }
-.nav-horizontal-a {
+.nav-horizon-a {
  	display: block;
  	font-size:13px; color:#333;
 	}
-	.nav-horizontal-a.is-active {
+	.nav-horizon-a.is-active {
 	 	color: #ec3940;
 	}
-	/*.nav-horizontal-item:nth-child(-n+2) .nav-horizontal-a
+	/*.nav-horizon-item:nth-child(-n+2) .nav-horizon-a
 	{
 		border-bottom: solid 1px #f5f5f5;
 	}*/
-	/*.nav-horizontal-item:nth-child(odd) .nav-horizontal-a {
+	/*.nav-horizon-item:nth-child(odd) .nav-horizon-a {
 	 	margin-left: 10px;
 	}
-	.nav-horizontal-item:nth-child(even) .nav-horizontal-a {
+	.nav-horizon-item:nth-child(even) .nav-horizon-a {
 	 	margin-right: 10px;
 	}*/
-.nav-horizontal-pagination {
+.nav-horizon-pagination {
 	height: 20px; 
 	text-align: center;
 }
-.nav-horizontal-pagination .swiper-pagination-bullet {
+.nav-horizon-pagination .swiper-pagination-bullet {
 	width: 6px; height: 6px;
 	margin-left: 2px; margin-right: 2px;
 	background-color:#ccc;
 	vertical-align: middle;
 }
-.nav-horizontal-pagination .swiper-pagination-bullet-active {
+.nav-horizon-pagination .swiper-pagination-bullet-active {
 	background-color: #7f7f7f;
 }
 
@@ -3040,7 +3040,7 @@ body.video_pop_open .video_pop{visibility: visible}
 .category-nav-d2:before {
 	content: '';
 	display: block;
-	margin-top:50px;
+	margin-top:50px; 
 }
 .category-nav-d2-item {
 	
