@@ -227,19 +227,12 @@
 <script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
 <script type="text/javascript" src="../../resources_new/js/jquery-mobile-ui.js"></script>
 <script>
-    var swiperNavCategory = new Swiper('.nav-hori', {
-        pagination: '.nav-hori-pagination',
-        paginationClickable: true,
-        spaceBetween: 0
-    });
-	/*var swiperNavCategory = new Swiper('.nav-hori', {
-        pagination: '.nav-hori-swiper-pagination',
-        slidesPerView: 2,
-        slidesPerColumn: 2,
-        paginationClickable: true,
-        spaceBetween: 0
-    });*/
-    var navPhoto = new Swiper('.nav-photo', {
+	/* 카테고리 Navigation Swiper */
+	var swiperNavCategory = new Swiper('.nav-hori', {
+		pagination: '.nav-hori-pagination',
+		paginationClickable: true
+	});
+	var navPhoto = new Swiper('.nav-photo', {
         nextButton: '.nav-photo-btn-next',
         prevButton: '.nav-photo-btn-prev',
         pagination: '.nav-photo-pagination',
