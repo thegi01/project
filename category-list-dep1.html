@@ -22,7 +22,7 @@
 <div id="wrap" class="category">
 	<div id="container" class="main"><!-- container -->
 		<header class="sub_header"><!-- header -->
-			<h1>패션</h1>
+			<h1>카테고리</h1>
 			<button type="button" class="btn_back">이전</button>
 			<span class="btn_home"><a href="#">홈</a></span>
 		</header><!-- //header -->
@@ -31,13 +31,12 @@
 				<input type="search" placeholder="상품명을 입력하세요." />
 				<span class="button"><button type="button" class="btn_search">검색</button></span>
 			</div>
-			<div class="search_close"><div><a href="#">닫기</a></div></div>
+			<div class="search_close"><div><a href="#">닫기</a></div></div><!--그랜드오픈 수정 닫기버튼 a태그로 변경 -->
 		</div><!-- //search_area -->
 		<section id="contents" class="contents"><!-- contents -->
-						
-			<h2 class="blind">전체상품</h2>
-			
-			<!-- nav-hori -->
+			<h2 class="blind">카테고리</h2>
+
+			<!-- Category Navigation -->
 			<nav class="nav-hori">
 				<div class="nav-hori-lst swiper-wrapper">
 					<div class="nav-hori-col swiper-slide">
@@ -55,234 +54,172 @@
 					<div class="nav-hori-col swiper-slide">
 						<div class="nav-hori-item"><a href="#href" class="nav-hori-a">Menu9</a></div>
 					</div>
-				</div>				
+				</div>
 				<div class="nav-hori-pagination"></div>
 			</nav>
-			<!-- //nav-hori -->	
-
-			<!-- 추천기획전 -->
-			<div class="h3-pill global-space">
-				<h3 class="h3-pill-title">추천기획전</h3>
+			<!-- //Category Navigation -->
+			
+			<!-- 추천기획전(RecomSpe__nav) -->
+			<div class="h3-tit-ty2 global-space">
+				<h3 class="h3-txt-ty2">추천기획전</h3>
 			</div>
-			<div class="nav-photo">
+			<div class="nav-photo RecomSpe__nav">
 				<ul class="nav-photo-lst swiper-wrapper">
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/164/10003164_wg_20160426183304.jpg" alt="여유 셀렉티드 티블라우스 3종 " class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/173/10003173_wg_20160426190056.jpg" alt="여유 수피마 코튼 티셔츠 3종 (남성)(비디오픽)" class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/181/10003181_wg_20160426182214.jpg" alt="여유 린넨 스트레치 자켓(비디오픽)" class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/799/10002799_wg_20160407172512.jpg" alt="(남) 론즈데일 슈퍼라이트 세트 3종" class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/404/10002404_wg_20160304201759.jpg" alt="(남)콜핑 봄 등산복 3종" class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/409/10002409_wg_20160304201335.jpg" alt="(여)콜핑 봄 등산복 3종" class="img-auto"></a></li>
-					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/413/10002413_wg_20160315110413.jpg" alt="안나수이 봄 슬림핏 스트레치 데님 1종" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/164/10003164_wg_20160426183304.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="여유 셀렉티드 티블라우스 3종" class="img-auto"></a> </li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/173/10003173_wg_20160426190056.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="여유 수피마 코튼 티셔츠 3종 (남성)(비디오픽)" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/181/10003181_wg_20160426182214.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="여유 린넨 스트레치 자켓(비디오픽)" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/799/10002799_wg_20160407172512.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="(남) 론즈데일 슈퍼라이트 세트 3종" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/404/10002404_wg_20160304201759.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="(남)콜핑 봄 등산복 3종" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/409/10002409_wg_20160304201335.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="(여)콜핑 봄 등산복 3종" class="img-auto"></a></li>
+					<li class="nav-photo-item swiper-slide"><a href="#href" class="nav-photo-a"><img src="http://img.shinsegaetvshopping.com/goods/413/10002413_wg_20160315110413.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="안나수이 봄 슬림핏 스트레치 데님 1종" class="img-auto"></a></li>
 				</ul>
 				<div class="nav-photo-pagination"></div>
-				<a href="#href" class="nav-photo-btn-prev">이전 추천기획전</a>
-				<a href="#href" class="nav-photo-btn-next">다음 추천기획전</a>
+				<div class="nav-photo-btn-prev"><span class="ico ico-arr">이전</span></div>
+				<div class="nav-photo-btn-next"><span class="ico ico-arr">다음</span></div>
 			</div>
 			<!-- //추천기획전 -->
-			
-			<!-- 추천상품 -->
-			<div class="h3-pill global-space">
-				<h3 class="h3-pill-title">추천상품</h3>
+
+			<!-- 추천상품(RecomProd__nav) -->
+			<div class="h3-tit-ty2 global-space">
+				<h3 class="h3-txt-ty2">추천상품</h3>
 			</div>
-			<div class="nav-photo">
-				<ul class="nav-photo-lst swiper-wrapper"> <!--상품상세는 베스트의 목록을 그대로, 마크업을 변경 이슈 결정? -->
+			<div class="nav-photo RecomProd__nav">
+				<ul class="nav-photo-lst swiper-wrapper">
 					<li class="nav-photo-item swiper-slide">
 						<a href="#href" class="nav-photo-a">
-							<img src="http://img.shinsegaetvshopping.com/goods/301/10001301_wg_20151113154319.jpg" alt="쿠쿠압력밥솥10인용CRP-P107FR/FD" class="img-auto">
-							<p class="goods-name">상품명</p>
-							<dl class="goods-pirce">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
-							<dl class="goods-month">
-								<dt class="blind">무이자 개월수</dt><dd>3</dd>
-							</dl>
+							<img src="http://img.shinsegaetvshopping.com/goods/301/10001301_wg_20151113154319.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="쿠쿠압력밥솥10인용CRP-P107FR/FD" class="img-auto"> 
+							<div class="nav-photo-detail global-space">
+								<div class="goods-name is-ellipsis">쿠쿠압력밥솥10인용CRP-P107FR/FD 쿠쿠압력밥솥10인용CRP-P107FR/FD 쿠쿠압력밥솥10인용CRP-P107FR/FD</div> <!-- is-ellipsis : 말줄임 적용 -->
+								<div class="goods-price">
+									<dl class="goods-price-item">
+										<dt class="price-name">혜택가</dt> 
+										<dd class="price-now"><em class="price-emph">141,000</em>원</dd>
+									</dl>
+									<dl class="goods-price-item">
+										<dt class="blind">원가</dt>
+										<dd class="price-org">144,000원</dd>
+									</dl>
+								</div>
+								<div class="goods-benefit">
+									<dl class="goods-benefit-item">
+										<dt class="ico ico-comm ico-point">적립금</dt>
+										<dd class="goods-benefit-num">950</dd>
+									</dl>
+									<dl class="goods-benefit-item">
+										<dt class="ico ico-comm ico-month">무이자 개월수</dt>
+										<dd class="goods-benefit-num">3</dd>
+									</dl>
+								</div>
+							</div>
 						</a>
 					</li>
 					<li class="nav-photo-item swiper-slide">
 						<a href="#href" class="nav-photo-a">
-							<img src="http://img.shinsegaetvshopping.com/goods/380/10001380_wg_20151113160109.jpg" alt="(단품) 4BNK 프라임 사각 멀티홀더">
-							<p class="nav-photo-name">상품명</p>
-							<dl class="goods-pirce">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
+							<img src="http://img.shinsegaetvshopping.com/goods/731/10001731_wg_20151229164628.jpg" alt="(페프/미스톡) 단독특가 펌프스,플랫 베스트 균일가 9종 택 1" onerror="this.src=&quot;http://img.shinsegaetvshopping.com/resources_new/img/img_wide_none.jpg&quot;"  class="img-auto">
+							<div class="nav-photo-detail global-space">
+								<div class="goods-name is-ellipsis">(페프/미스톡) 단독특가 펌프스,플랫 베스트 균일가 9종 택 1</div>
+								<div class="goods-price">
+									<dl class="goods-price-item">
+										<dt class="price-name">혜택가</dt> 
+										<dd class="price-now"><em class="price-emph">28,800</em>원</dd>
+									</dl>
+									<dl class="goods-price-item">
+										<dt class="blind">원가</dt>
+										<dd class="price-org">29,800원</dd>
+									</dl>
+								</div>
+								<div class="goods-benefit">
+									<dl class="goods-benefit-item">
+										<dt class="ico ico-comm ico-month">무이자 개월수</dt>
+										<dd class="goods-benefit-num">3</dd>
+									</dl>
+								</div>
+							</div>
 						</a>
 					</li>
 					<li class="nav-photo-item swiper-slide">
 						<a href="#href" class="nav-photo-a">
-							<img src="http://img.shinsegaetvshopping.com/goods/544/10001544_wg_20151110153315.jpg" alt="한경희 광파오븐홈세프 HO-2000">
-							<p class="nav-photo-name">상품명</p>
-							<dl class="goods-pirce">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
+							<img src="http://img.shinsegaetvshopping.com/goods/734/10001734_wg_20151229142311.jpg" alt="(페프/미스톡) 페프 크리스탈 에나멜 펌프스 4cm 블랙/핑크베이지" onerror="this.src=&quot;http://img.shinsegaetvshopping.com/resources_new/img/img_wide_none.jpg&quot;" class="img-auto">
+							<div class="nav-photo-detail global-space">
+								<div class="goods-name is-ellipsis">(페프/미스톡) 페프 크리스탈 에나멜 펌프스 4cm 블랙/핑크베이지</div>
+								<div class="goods-price">
+									<dl class="goods-price-item">
+										<dt class="price-name">혜택가</dt> 
+										<dd class="price-now"><em class="price-emph">27,800</em>원</dd>
+									</dl>
+									<dl class="goods-price-item">
+										<dt class="blind">원가</dt>
+										<dd class="price-org">28,800원</dd>
+									</dl>
+								</div>
+								<div class="goods-benefit">
+									<dl class="goods-benefit-item">
+										<dt class="ico ico-comm ico-point">적립금</dt>
+										<dd class="goods-benefit-num">300</dd>
+									</dl>
+								</div>
+							</div>
 						</a>
 					</li>
 					<li class="nav-photo-item swiper-slide">
 						<a href="#href" class="nav-photo-a">
-							<img src="http://img.shinsegaetvshopping.com/goods/571/10001571_wg_20151207141456.jpg" alt="숨쉬는 황토 쌀독 세트">
-							<p class="nav-photo-name">상품명</p>
-							<dl class="goods-pirce">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
+							<img src="http://img.shinsegaetvshopping.com/goods/934/10001934_wg_20160115181747.jpg" alt="찰스울프 천연 다이아몬드 팔찌" onerror="this.src=&quot;http://img.shinsegaetvshopping.com/resources_new/img/img_wide_none.jpg&quot;" class="img-auto">
+							<div class="nav-photo-detail global-space">
+								<div class="goods-name is-ellipsis">찰스울프 천연 다이아몬드 팔찌</div>
+								<div class="goods-price">
+									<dl class="goods-price-item">
+										<dt class="price-name">혜택가</dt> 
+										<dd class="price-now"><em class="price-emph">141,000</em>원</dd>
+									</dl>
+									<dl class="goods-price-item">
+										<dt class="blind">원가</dt>
+										<dd class="price-org">144,000원</dd>
+									</dl>
+								</div>
+							</div>
 						</a>
 					</li>
 					<li class="nav-photo-item swiper-slide">
 						<a href="#href" class="nav-photo-a">
-							<img src="http://img.shinsegaetvshopping.com/goods/576/10001576_wg_20151207150529.jpg" alt="아이넥스 프리미엄 와이드 싱크선반">
-							<p class="nav-photo-name">아이넥스 프리미엄 와이드 싱크선반</p>
-							<dl class="goods-pirce">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>79,000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>89,000</em>원</span>
-								</dd>
-							</dl>
+							<img src="http://img.shinsegaetvshopping.com/goods/933/10001933_wg_20160115181600.jpg" alt="찰스울프 천연 다이아몬드 귀걸이" onerror="this.src=&quot;http://img.shinsegaetvshopping.com/resources_new/img/img_wide_none.jpg&quot;"  class="img-auto">
+							<div class="nav-photo-detail global-space">
+								<div class="goods-name is-ellipsis">찰스울프 천연 다이아몬드 귀걸이</div>
+								<div class="goods-price">
+									<dl class="goods-price-item">
+										<dt class="price-name">혜택가</dt> 
+										<dd class="price-now"><em class="price-emph">940,000</em>원</dd>
+									</dl>
+									<dl class="goods-price-item">
+										<dt class="blind">원가</dt>
+										<dd class="price-org">990,000원</dd>
+									</dl>
+								</div>
+								<div class="goods-benefit">
+									<dl class="goods-benefit-item">
+										<dt class="ico ico-comm ico-month">무이자 개월수</dt>
+										<dd class="goods-benefit-num">10</dd>
+									</dl>
+								</div>
+							</div>
 						</a>
 					</li>
 				</ul>
 				<div class="nav-photo-pagination"></div>
-				<a href="#href" class="nav-photo-btn-prev">이전 추천상품</a>
-				<a href="#href" class="nav-photo-btn-next">다음 추천상품</a>
+				<div class="nav-photo-btn-prev"><span class="ico ico-arr">이전</span></div>
+				<div class="nav-photo-btn-next"><span class="ico ico-arr">다음</span></div>
 			</div>
-			<!-- //추천상품 -->
-
-			
-			<!-- 상품 목록 --> <!-- 디자인 변경 없음. 마크업만 추후 시간이 날 경우 변경..일단 보류 -->
-			<h3 class="blind">상품 목록</h3>
-			<div class="goods-lists">
-				<div class="goods-lists-header">
-					<p class="goods-lists-header-count"><em>1,500</em>개 상품</p>
-					<h4 class="blind">정렬 선택</h4>
-					<div class="sort-data">						
-						<ul class="sort-data-list">
-							<li class="sort-data-item is-active"><a href="#href" class="sort-data-a">추천순</a><i class="blind">선택됨</i></li>
-							<li class="sort-data-item"><a href="#href" class="sort-data-a">날짜순</a></li>
-						</ul>
-					</div>
-					<h4 class="blind">스킨 선택</h4>
-					<div class="sort-skin">						
-						<ul class="sort-skin-list">
-							<li class="sort-skin-item is-active"><a href="#href" class="sort-skin-a"><span class="ico icon-sort icon-sort-type">격자형</span></a><i class="blind">선택됨</i></li>
-							<li class="sort-skin-item"><a href="#href" class="sort-skin-a"><span class="ico icon-sort icon-sort-type">목록형</span></a></li>
-						</ul>
-					</div>
-				</div>
-				<h4 class="blind">목록</h4>
-				<ul class="list-thumb grid">
-					<li class="list-thumb-item col s3">
-						<a href="#href" class="list-thumb-a">
-							<img src="" class="list-thumb-img" alt="이미지 설명">
-							<p class="goods-name list-thumb-goods-name">상품명</p>
-							<dl class="goods-price list-thumb-price">
-								<dt class="price-name">혜택가</dt>
-								<dd class="price-desc">
-									<span class="price-now"><i class="blind">가격</i><em>41,0000</em>원</span>
-									<span class="price-org"><i class="blind">원가</i><em>44,000</em>원</span>
-								</dd>
-							</dl>
-							<div class="benefit list-thumb-benefit">
-								<dl class="benefit-save">
-									<dt class="icon-fill">적립금</dt><dd>1000</dd>
-								</dl>
-								<dl class="benefit-noint">
-									<dt class="blind">무이자 개월수</dt><dd>3</dd>
-								</dl>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- //상품 목록 -->
-			
-			<!-- 이전 코드 -->
-			<!-- <div class="category_goods_list">
-					<ul>
-						<li>
-							<div class="wide_goods_wrap">
-								<div class="goods_img_wrap">
-									<div class="img_area"><img src="/resources_new/img/tmp/07.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="상품1" /></div>
-									<div class="btn_play"><a href="#">동영상 재생</a></div>
-								</div>
-								<div class="goods_bottom_wrap">
-									<div class="goods_name">풍년 베르투 압력솥 세트</div>
-									<div class="goods_price">
-										<span class="price">혜택가 <em>2,000,000</em>원</span>
-										<span class="price_sell"><em>2,000,000</em>원</span>
-									</div>
-									<div class="goods_benefit">
-										<span class="save"><em class="icon">적립금</em>1000</span>
-										<span class="noint"><em class="icon">무이자</em>12</span>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="wide_goods_wrap">
-								<div class="goods_img_wrap">
-									<div class="img_area"><img src="/resources_new/img/wide.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="상품2" /></div>
-									<div class="btn_play"><a href="#">동영상 재생</a></div>
-								</div>
-								<div class="goods_bottom_wrap">
-									<div class="goods_name">풍년 베르투 압력솥 세트 풍년 베르투 압력솥 세트 풍년 베르투 압력솥 세트</div>
-									<div class="goods_price">
-										<span class="price">혜택가 <em>2,000,000</em>원</span>
-										<span class="price_sell"><em>2,000,000</em>원</span>
-									</div>
-									<div class="goods_benefit">
-										<span class="save"><em class="icon">적립금</em>5000</span>
-										<span class="noint"><em class="icon">무이자</em>3</span>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="wide_goods_wrap">
-								<div class="goods_img_wrap">
-									<div class="img_area"><img src="/resources_new/img/img_wide_prepare.jpg" onerror="this.src='/resources_new/img/img_wide_none.jpg'" alt="상품2" /></div>
-									<div class="btn_play"><a href="#">동영상 재생</a></div>
-								</div>
-								<div class="goods_bottom_wrap">
-									<div class="goods_name">풍년 베르투 압력솥 세트 풍년 베르투 압력솥 세트 풍년 베르투 압력솥 세트</div>
-									<div class="goods_price">
-										<span class="price">혜택가 <em>2,000,000</em>원</span>
-										<span class="price_sell"><em>2,000,000</em>원</span>
-									</div>
-									<div class="goods_benefit">
-										<span class="save"><em class="icon">적립금</em>5000</span>
-										<span class="noint"><em class="icon">무이자</em>3</span>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div> -->
-				<!-- //category_goods_list -->
+			<!-- //추천상품  -->
 			
 		</section><!-- //contents -->
         <!-- 푸터영역 -->
-        
+        <%@ include file="/pub/include_new/footer.jsp"%>
         <!-- //푸터영역 -->
     </div><!-- //container -->
     <!-- 사이드바영역 -->
-    
+    <%@ include file="/pub/include_new/sideBar.jsp"%>
     <!-- //사이드바영역 -->
     <!-- 액션바영역 -->
-    
+    <%@ include file="/pub/include_new/actionbar.jsp"%>
     <!-- //액션바영역 -->
 </div><!-- //wrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
