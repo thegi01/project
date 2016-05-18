@@ -215,13 +215,13 @@
 				<h3 class="blind">정렬 선택</h3>
 				<div class="sort-base">
 					<h3 class="blind">데이터 정렬</h3>
-					<a href="javscript:" class="sort-base-tit">최신순</a>
+					<a href="javscript:" class="sort-base-tit">최신순<span class="ico ico-arr ico-arr-dn-gray"></a>
 					<ul class="sort-base-lst">
-						<li class="sort-base-item is-active"><a href="javascript:" class=".sort-base-a">최신순</a></li>
-						<li class="sort-base-item"><a href="javascript:" class=".sort-base-a">추천순</a></li>
-						<li class="sort-base-item"><a href="javascript:" class=".sort-base-a">낮은가격순</a></li>
-						<li class="sort-base-item"><a href="javascript:" class=".sort-base-a">높은가격순</a></li>
-						<li class="sort-base-item"><a href="javascript:" class=".sort-base-a">상품분류순</a></li>
+						<li class="sort-base-item is-active"><a href="javascript:" class="sort-base-a">최신순</a></li>
+						<li class="sort-base-item"><a href="javascript:" class="sort-base-a">추천순</a></li>
+						<li class="sort-base-item"><a href="javascript:" class="sort-base-a">낮은가격순</a></li>
+						<li class="sort-base-item"><a href="javascript:" class="sort-base-a">높은가격순</a></li>
+						<li class="sort-base-item"><a href="javascript:" class="sort-base-a">상품분류순</a></li>
 					</ul>
 				</div>
 				<div class="sort-skin">
@@ -233,56 +233,59 @@
 					</ul>
 				</div>
 			</div>
-
-			<div style="height:50px"></div>
-			<div class="combo_wrap">
-				<div class="inner">
-					<div class="ds_select type_txt sel1 w1">
-						<a href="javascript:" class="title">전체</a>
-						<div class="select_cont iscroll_wrap" id="iscroll_1" style="max-height: 1956px; overflow: hidden;">
-							<ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
-								<li class="on"><a href="javascript:" id="ps_all">전체</a></li>
-								<li><a href="javascript:" id="ps_1">패션중분류1</a></li>
-								<li><a href="javascript:" id="ps_2">패션중분류2</a></li>
-								<li><a href="javascript:" id="ps_3">패션중분류3</a></li>
-								<li><a href="javascript:" id="ps_4">패션중분류4</a></li>
-								<li><a href="javascript:" id="ps_5">패션중분류5</a></li>
-								<li><a href="javascript:" id="ps_6">패션중분류6</a></li>
-								<li><a href="javascript:" id="ps_7">패션중분류7</a></li>
-								<li><a href="javascript:" id="ps_8">패션중분류8</a></li>
-								<li><a href="javascript:" id="ps_9">패션중분류9</a></li>
-								<li><a href="javascript:" id="ps_10">패션중분류10</a></li>
-							</ul>
-						<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="overflow: hidden; pointer-events: none;"><div class="iScrollIndicator" style="transition-duration: 0ms; display: none; height: 431px; transform: translate(0px, 0px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div></div>
-					</div>
-					<div class="ds_select type_txt sel2 w1">
-						<a href="javascript:" class="title">최신순</a>
-						<div class="select_cont iscroll_wrap" id="iscroll_2" style="max-height: 1956px; overflow: hidden;">
-							<ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
-								<li class="on"><a href="javascript:" id="al_1">최신순</a></li>
-								<li><a href="javascript:" id="al_2">추천순</a></li>
-								<li><a href="javascript:" id="al_3">낮은가격순</a></li>
-								<li><a href="javascript:" id="al_4">높은가격순</a></li>
-								<li><a href="javascript:" id="al_5">상품분류순</a></li>
-							</ul>
-						<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="overflow: hidden; pointer-events: none;"><div class="iScrollIndicator" style="transition-duration: 0ms; display: none; height: 191px; transform: translate(0px, 0px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div></div></div>
-					</div>
-					<div class="ds_select type_icon onetouch sort">
-						<div class="title">
-							<a href="javascript:" class="view_type2">정렬방식2</a>
-						</div>
-						<div class="select_cont" style="max-height: 1706px;">
-							<ul class="cont">
-								<li><a href="javascript:" class="view_type2">정렬방식2</a></li>
-								<li><a href="javascript:" class="view_type3">정렬방식2</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 			 <!-- //정렬 선택 -->
 
 			<!-- 상품 목록 -->
+			<div class="goods-cont">
+				<h3 class="blind">상품 목록</h3>
+				<ul class="lst-thumb lst-thumb-m">
+					<li class="lst-thumb-item">
+						<a href="#href" class="list-thumb-a">
+							<div class="goods-img"><img src="http://img.shinsegaetvshopping.com/goods/800/10001800_h_20160127172655.jpg" alt="" onerror="../../resources_new/img/img_detail_none.jpg&quot;" class="img-auto"></div>
+							<div class="goods-name">FMG  by 후라밍고 퀼팅 퍼 패딩 코트</div>
+							<div class="goods-price">
+								<dl class="goods-price-item">
+									<dt class="price-name">혜택가</dt><dd class="price-now"><em class="price-emph">141,000</em>원</dd>
+								</dl>
+								<dl class="goods-price-item">
+									<dt class="blind">원가</dt><dd class="price-org">144,000원</dd>
+								</dl>
+							</div>
+							<div class="goods-benefit">
+								<dl class="goods-benefit-item">
+									<dt class="ico ico-comm ico-point">적립금</dt><dd class="goods-benefit-num">950</dd>
+								</dl>
+								<dl class="goods-benefit-item">
+									<dt class="ico ico-comm ico-mu">무이자 개월수</dt><dd class="goods-benefit-num">3</dd>
+								</dl>
+							</div>
+						</a>
+					</li>
+					<li class="lst-thumb-item">
+						<a href="#href" class="list-thumb-a">
+							<div class="goods-img">
+								<img src="http://img.shinsegaetvshopping.com/goods/800/10001800_h_20160127172655.jpg" alt="FMG  by 후라밍고 퀼팅 퍼 패딩 코트(비디오픽)" onerror="../../resources_new/img/img_detail_none.jpg&quot;" class="img-auto">
+							</div>
+							<div class="goods-price">
+								<dl class="goods-price-item">
+									<dt class="price-name">혜택가</dt><dd class="price-now"><em class="price-emph">141,000</em>원</dd>
+								</dl>
+								<dl class="goods-price-item">
+									<dt class="blind">원가</dt><dd class="price-org">144,000원</dd>
+								</dl>
+							</div>
+							<div class="goods-benefit">
+								<dl class="goods-benefit-item">
+									<dt class="ico ico-comm ico-point">적립금</dt><dd class="goods-benefit-num">950</dd>
+								</dl>
+								<dl class="goods-benefit-item">
+									<dt class="ico ico-comm ico-mu">무이자 개월수</dt><dd class="goods-benefit-num">3</dd>
+								</dl>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
 			<!-- //상품 목록 -->
 			
 		</section><!-- //contents -->
@@ -358,6 +361,45 @@
         pagination: '.nav-photo-pagination',
         paginationType: 'fraction'
     });
+
+   	/* 정렬 선택 Control */
+   	jQuery('.sort-base-tit').click(function(){
+   		jQuery(this).next('.sort-base-lst').toggle();
+   	});
+   	jQuery('.sort-base-a').click(function(){
+   		sortCtrl(jQuery(this));
+   	});
+   	var sortCtrl = function(e){
+   		var sortItem = e.parent(),
+   			sort = e.parents('.sort-base'),
+   			isActive = 'is-active',
+   			getTxt = e.text();
+   		sortItem.siblings('.'+ isActive).removeClass(isActive);
+   		sortItem.addClass(isActive);
+   		sort.find('.sort-base-tit').text(getTxt);
+   		sort.find('.sort-base-lst').hide();
+   	}
+
+   	/* 목록 스킨 선택 */
+   	jQuery('.sort-skin-a').click(function(){
+   		sortSkin(jQuery(this), jQuery('.lst-thumb'));
+   	});
+   	var sortSkin = function(e, t){
+   		var eIcon = e.children(),
+   			cS = 'lst-thumb-s',
+   			cM = 'lst-thumb-m',
+   			cW = 'lst-thumb-w',
+   			c;
+   		if(eIcon.hasClass('ico-sort-s')) {
+   			c = cS;
+   		} else if(eIcon.hasClass('ico-sort-m')) {
+   			c = cM;
+   		} else {
+   			c = cW;
+   		}
+   		t.removeClass(cM).removeClass(cS).removeClass(cW).addClass(c);
+   	};
+
 </script>
 
 

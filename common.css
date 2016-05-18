@@ -2878,12 +2878,12 @@ body.video_pop_open .video_pop{visibility: visible}
 .global-space {
     padding-right : 16px; padding-left : 16px;
 }
-/* Common ----------------------- */
-.is-ellipsis {
-	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
 
 /* Style ----------------------- */
+/*
+ * Img
+ */
+.img-auto {width:100%; height:auto;}
 /*
  * Title
  */
@@ -2985,12 +2985,78 @@ body.video_pop_open .video_pop{visibility: visible}
 	.sort-skin-item.is-active .ico-sort-s {background-position: -57px -104px}
 	.sort-skin-item.is-active .ico-sort-m {background-position: -88px -104px }
 	.sort-skin-item.is-active .ico-sort-w {background-position: 0 -104px }
+.is-ellipsis {
+	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
 
-
+/* Common Contents ----------------------- */
 /*
- * Img
+ * 상품 정보
+ * used : 카테고리 상품 목록(RecomSpe-nav);
  */
-.img-auto {width:100%; height:auto;}
+.goods-name {
+	color:#333; line-height: 130%;
+	}
+	.RecomSpe__nav .goods-name {	
+		font-size: 15px; 	
+	}
+.goods-price {
+	/*overflow: hidden;*/
+	}
+	.RecomSpe__nav .goods-price {
+		padding-top:4px;
+	}
+.goods-price-item,
+.price-name,
+.price-now,
+.price-org {
+	display: inline-block;
+}
+.goods-price-item {
+	line-height: 140%; vertical-align:middle;
+	}
+	.goods-price-item:not(:first-child) {
+	    margin-left: 6px;
+	}
+.price-name {
+	color: #666; 
+	}
+	.nav-photo .price-name {
+		font-size: 14px; 
+	}
+.price-now {
+	color: #666;  
+	}
+	.nav-photo .price-now {		 
+		font-size: 14px; 
+	}
+.price-emph {
+	font-weight: bold; color: #ec3940; 
+	}
+	.nav-photo .price-emph {
+		font-size: 18px;
+	}
+.price-org {
+	 color: #999; text-decoration: line-through;
+	}
+	.nav-photo .price-org {
+		float: left; 
+		margin-right: 10px; margin-top: 2px;
+		font-size: 12px; 
+	}
+.goods-benefit {
+	overflow: hidden;
+	position: absolute; right: 16px; bottom: 14px;
+}
+.goods-benefit-item {
+	float: left;
+	margin-left: 5.5px;
+}
+.goods-benefit-num {
+	display: inline-block;
+	font-size: 12px; color: #666; line-height: 150%; vertical-align: middle;
+}
+
 
 /* Navigation ----------------------- */
 /*
@@ -3222,6 +3288,65 @@ body.video_pop_open .video_pop{visibility: visible}
 /*
  * List
  */
+ /*
+ * lst-thumb : list-thumb-m, list-thumb-s, list-thumb-w;
+ * used  
+ *      1. category list 
+ */
+.lst-thumb {
+	clear: both;
+	overflow: hidden;
+	}
+	.lst-thumb-s {
+		background-color: green;
+	}
+	.lst-thumb-m {
+		background-color: #fff;
+	}
+	.lst-thumb-w {
+		background-color: blue;
+	}
+.lst-thumb-item {
+	border-bottom: 1px solid #f6f6f6;
+	}
+	.lst-thumb-m .lst-thumb-item {
+		float:left;
+		position: relative;
+		width: 50%;
+		padding: 10px 10px 15px 10px;
+		border-right : 1px solid #f6f6f6;
+		box-sizing: border-box;
+	}
+.lst-thumb-a {
+	display: block;
+	}
+	.lst-thumb-m .lst-thumb-a {
+		min-height: 130px;
+	}
+.lst-thumb .goods-img {
+	
+	}
+	.lst-thumb-m.goods-img {
+		max-width:200px; height: auto;
+	}
+.lst-thumb .goods-name {
+	}
+	.lst-thumb-m .goods-name {
+	}
+.lst-thumb .goods-price {
+	}
+	.lst-thumb-m .goods-price {
+	}
+.lst-thumb .goods-benefit {
+	}
+	.lst-thumb-m .goods-benefit {
+	}
+
+ /*
+ * lst-border
+ * used  
+ *      
+ */
 .list-border {
 }
 .list-border-item {
@@ -3253,75 +3378,7 @@ body.video_pop_open .video_pop{visibility: visible}
     /*position:absolute; top:13px; right :16px; z-index: 1;*/
 }
 
-
 /* Components ----------------------- */
-/*
- * 상품 정보
- * used : 카테고리 상품 목록(RecomSpe-nav);
- */
-.goods-name {
-	color:#333; line-height: 130%;
-	}
-	.RecomSpe__nav .goods-name {	
-		font-size: 15px; 	
-	}
-.goods-price {
-	/*overflow: hidden;*/
-	}
-	.RecomSpe__nav .goods-price {
-		padding-top:4px;
-	}
-.goods-price-item,
-.price-name,
-.price-now,
-.price-org {
-	display: inline-block;
-}
-.goods-price-item {
-	line-height: 140%; vertical-align:middle;
-	}
-	.goods-price-item:not(:first-child) {
-	    margin-left: 6px;
-	}
-.price-name {
-	color: #666; 
-	}
-	.nav-photo .price-name {
-		font-size: 14px; 
-	}
-.price-now {
-	color: #666;  
-	}
-	.nav-photo .price-now {		 
-		font-size: 14px; 
-	}
-.price-emph {
-	font-weight: bold; color: #ec3940; 
-	}
-	.nav-photo .price-emph {
-		font-size: 18px;
-	}
-.price-org {
-	 color: #999; text-decoration: line-through;
-	}
-	.nav-photo .price-org {
-		float: left; 
-		margin-right: 10px; margin-top: 2px;
-		font-size: 12px; 
-	}
-.goods-benefit {
-	overflow: hidden;
-	position: absolute; right: 16px; bottom: 14px;
-}
-.goods-benefit-item {
-	float: left;
-	margin-left: 5.5px;
-}
-.goods-benefit-num {
-	display: inline-block;
-	font-size: 12px; color: #666; line-height: 150%; vertical-align: middle;
-}
-
 /*
  * bradcrumb
  * used : 카테고리 상품 목록(RecomSpe-nav);
@@ -3380,18 +3437,38 @@ body.video_pop_open .video_pop{visibility: visible}
     -webkit-box-flex:1; -webkit-flex:1; flex:1;
 }
 .sort-base-tit {
-	font-size: 13px; color:#333;
-	vertical-align: middle;
-}
-.sort-base-lst {
-	position: absolute; left: 0; right: 0;
-}
-.sort-base-item{
-
-}
-.sort-base-a {
 	display: block;
-	
+	height: 40px;
+	padding-left:16px;
+	font-size: 13px; color:#333; line-height: 40px; vertical-align: middle;
+ }
+ .sort-base-tit .ico-arr {
+ 	float: right;
+ 	margin-top: 15px; margin-right: 10px;
+	 }
+	 .ico-arr-dn-gray {
+	 	background: url('http://img.shinsegaetvshopping.com/resources_new/img/icon_arrow_20160331.png') no-repeat;background-position: 0 0;background-size:100px auto;width:14px;height: 8px;top:13px;right: 10px
+	 }
+
+.sort-base-lst {
+	display: none;
+	/*overflow: hidden; visibility: hidden;*/
+	position: absolute; width: 100%; z-index: 1;
+	max-height: 185px;
+	margin-top: 5px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	box-sizing: border-box;
+	}
+	.sort-base-item:not(:last-child){
+		border-bottom: 1px solid #ddd
+	}
+	.sort-base-item.is-active .sort-base-a {color:#ec3940;}
+.sort-base-a {
+	/*box-sizing: border-box;*/
+	display: block;
+	padding: 10px;
+	font-size: 14px
 }
 .sort-skin {
 	position: relative;
