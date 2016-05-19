@@ -3382,10 +3382,9 @@ body.video_pop_open .video_pop{visibility: visible}
 .nav-photo {
     position: relative;
     background-color: #fff;
-    border-bottom-style: solid; border-bottom-width: 1px;
 }
-.nav-photo.RecomSpe__nav {border-bottom-color:#dcdcdc;}
-.nav-photo.RecomProd__nav {border-bottom-color:#ddd;}
+.nav-photo.RecomSpe__nav {}
+.nav-photo.RecomProd__nav {border-bottom:solid 1px #ddd;}
 .nav-photo-lst {
 
 }
