@@ -556,7 +556,6 @@
 		jQuery(this).next('.sort-base-lst').toggle();
 	});
 	jQuery('.sort-base-a').click(function(e){
-		e.preventDefault();
 		sortCtrl(jQuery(this));
 	});
 	var sortCtrl = function(e){
@@ -571,7 +570,8 @@
 	}
 
 	/* 목록 스킨 선택 */
-	jQuery('.sort-skin-a').click(function(){
+	jQuery('.sort-skin-a').click(function(e){
+		e.preventDefault();
 		sortSkin(jQuery(this), jQuery('.lst-thumb'));
 	});
 	var sortSkin = function(e, t){
