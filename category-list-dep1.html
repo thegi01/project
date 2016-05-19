@@ -554,7 +554,8 @@
 	jQuery('.sort-base-tit').click(function(){
 		jQuery(this).next('.sort-base-lst').toggle();
 	});
-	jQuery('.sort-base-a').click(function(){
+	jQuery('.sort-base-a').click(function(e){
+		e.preventDefault();
 		sortCtrl(jQuery(this));
 	});
 	var sortCtrl = function(e){
