@@ -1,5 +1,42 @@
 
-[운영] http://m.shinsegaetvshopping.com/
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @thegi01
+ Unwatch 1
+  Star 0
+  Fork 1 thegi01/project
+ Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
+Branch: gh-pages Find file Copy path
+project/site.html
+97b24c0  3 days ago
+@thegi01 thegi01 Update site.html
+1 contributor
+RawBlameHistory     67 lines (54 sloc)  2.21 KB
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Project-Site</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+  <style>
+    h2 {
+      font-size: 1em;
+      margin-top : 2.5em;
+    }
+    a {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    
+  <h1>Project-Site<h1>
+   
+   [운영] http://m.shinsegaetvshopping.com/
 [개발] http://m-dev.shinsegaetvshopping.com/
 
 [퍼블]http://m-pub.dreamshopping.co.kr/pub/workList2.jsp
@@ -11,16 +48,24 @@ http://10.149.213.189:8080/pub/custom/event/evt_20160516_allban_pop.jsp
 http://10.149.213.189:8080/pub/category/category_list_1.jsp
 
 
-http://10.149.213.189:8080/pub/category/category_list_1.html
 
-http://10.149.213.189:8080/pub/category/category_list_2.html
+<a href="http://10.149.213.189:8080/pub/category/category_list_1.html" target="_blank">http://10.149.213.189:8080/pub/category/category_list_1.html</a>
 
-http://10.149.213.189:8080/pub/category/category_detail.jsp
+
+<a href="http://10.149.213.189:8080/pub/category/category_list_2.html" target="_blank">http://10.149.213.189:8080/pub/category/category_list_2.html</a>
+
+<a href="http://10.149.213.189:8080/pub/category/category_detail.jsp" target="_blank">http://10.149.213.189:8080/pub/category/category_detail.jsp</a>
 
 
 
 
 http://10.149.213.189:8080/pub/custom/event/evt_20160518_emart.html
+
+
+</body>
+</html>
+
+
 
 
 
