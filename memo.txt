@@ -19,3 +19,10 @@ http://10.149.213.189:8080/pub/category/category_list_1.html
 http://10.149.213.189:8080/pub/category/category_list_2.html
 
 http://10.149.213.189:8080/pub/category/category_detail.jsp
+
+
+
+
+
+
+
