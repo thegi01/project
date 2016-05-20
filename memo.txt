@@ -15,3 +15,5 @@ http://10.149.213.189:8080/pub/custom/event/evt_20160518_emart.html
 
 
 http://10.149.213.189:8080/pub/category/category_list_1.html
+
+http://10.149.213.189:8080/pub/category/category_detail.jsp
