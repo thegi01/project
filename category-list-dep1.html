@@ -582,6 +582,9 @@
 			cC = 'lst-thumb-c',
 			cW = 'lst-thumb-w',
 			c;
+		if(jQuery('.sort-base-lst').is(':visible')){
+			jQuery('.sort-base-lst').hide();
+		}
 		skinItem.siblings('.'+ isActive).removeClass(isActive);
 		skinItem.addClass(isActive);
 		if(eIcon.hasClass('ico-sort-r')) {
