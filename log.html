@@ -6,11 +6,17 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
   <style>
     h1 {font-size:1.3rem;}
-    p {
+    .log p {
       margin-left:1rem;
       font-size:0.8rem;
       color:#333;
     }
+    .log p:before {
+      content:'-';
+      display:inline-block;
+      margin-right:5px;
+    }
+    
     
   </style>
 </head>
@@ -23,14 +29,20 @@
   </dl>
 
   <h1> 업무일지 </h1>
-  <ul>
-    <li>2016.05.09 월 : 투입</li>
-    <li>2016.05.10 화 : 프로젝트 파악</li>
-    <li>2016.05.11 수 : 카테고리 코딩</li>
-    <li>2016.05.12 목 : 카테고리 코딩</li>
-    <li>2016.05.13 금 : 카테고리 코딩, swiper 적용</li>
-    <li>2016.05.15 일 : 카테고리 메인 ui 구현(jquery), 카테고리 서브 네이밍 변경, validation 후 마크업 수정</li>
-    <li>2016.05.16 월 : 노트북 셋팅, 올반 제휴 이벤트 안내페이지, 팝업 코딩(21시 퇴근), 카테고리 클래스 네이밍 정리(집)</li>
+  <ul class="log">
+    <li>2016.05.09 월 : 
+      <p>투입</p>
+    </li>
+    <li>2016.05.10 화 : <p>프로젝트 파악</p></li>
+    <li>2016.05.11 수 : <p>카테고리 코딩</p></li>
+    <li>2016.05.12 목 : <p>카테고리 코딩</p></li>
+    <li>2016.05.13 금 : <p>카테고리 코딩, swiper 적용</p></li>
+    <li>2016.05.15 일 : 
+      <p>카테고리 메인 ui 구현(jquery), 카테고리 서브 네이밍 변경, validation 후 마크업 수정</p>
+    </li>
+    <li>2016.05.16 월 : 
+      <p>노트북 셋팅, 올반 제휴 이벤트 안내페이지, 팝업 코딩(21시 퇴근), 카테고리 클래스 네이밍 정리(집)</p>
+    </li>
     <li>2016.05.17 화 : 
       <p>신규 가입 제휴 이벤트 코딩, 업데이트, 메일 발송</p>
       <p>카티고리 목록1 코딩, swiper 화면 코딩</p>
