@@ -3335,13 +3335,14 @@ body.video_pop_open .video_pop{visibility: visible}
 	display: none;
 	clear: both;
 	overflow: hidden;
+	margin-top: 84px;
 	padding-left: 16px; padding-right: 16px;
 	background-color: #edeff0;
 }
 .Cate__nav-d2:before {
-	content: '';
+	/*content: '';
 	display: block;
-	margin-top:76px;
+	margin-top:84px;*/ /* dep1 height */
 }
 .Cate__nav-d2-item {
 	float: left; 
