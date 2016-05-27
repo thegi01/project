@@ -450,6 +450,7 @@
 		if(t.hasClass(isShow)) {
 			t.removeClass(isShow);
 		} else {
+			t.siblings().removeClass(isShow);
 			t.addClass(isShow);
 		}
 	});
