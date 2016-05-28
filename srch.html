@@ -13,7 +13,7 @@
 <link rel="shortcut icon" href="../../resources_new/img/android_144x144.png">
 <title>검색 | 신세계TV쇼핑</title>
 <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css">
-<link rel="stylesheet" type="text/css" href="../../resources_new/css/common-cate.css"> 
+<link rel="stylesheet" type="text/css" href="common.css"> 
 </head>
 <body>
 <div class="skip_navi">
@@ -33,51 +33,58 @@
 		
 		<!-- 검색 -->
 		<div class="srch">
-			<div class="srch-area">
-				<button class="bt btn-back-w"><i class="ico ico-arr"></i>이전</button>
-				<fieldset>
-					<legend>검색어 입력</legend>
-					<div class="srch-input">
-						<input type="search" name="keyword" title="검색어 입력" placeholder="검색어를 입력해주세요." class="input-srch">
-						<button class="bt bt-reset"><i class="ico ico-comm">검색어 재설정</i></button>
-						<button type="submit" class="btn-srch"><i class="ico ico-layout ico-srch">검색</i></button>
-					</div>
+			<h2 class="blind">검색</h2>
+			<!-- 검색어 입력폼  -->
+			<form action="/" class="srch-srch">
+				<button class="bt btn-back-w"><i class="ico ico-arr ico-back-w">이전</i></button>
+				<fieldset class="srch-field">
+					<legend>검색어 입력폼</legend>
+					<input type="search" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="bt bt-reset"><i class="ico ico-comm ico-del">검색어 재설정</i></button>
+					<button type="submit" class="btn-srch"><i class="ico ico-layout ico-srch">검색</i></button>
 				</fieldset>
-			</div>
+			</form>
+			<!-- //검색어 입력폼 -->
+			<!-- 최근검색어 & 인기검색어  -->
 			<div class="srch-word">
-				<h4 class="srch-word-tit is-show"><a href="javascript;">최근검색어</a></h4>
+				<!-- 최근검색어 -->
+				<h3 class="srch-word-tit is-show"><a href="#none">최근검색어</a></h3>
 				<div class="srch-word-area">
 					<ul class="srch-word-lst">
 						<li class="srch-word-item">
-							<p class="srch-word-txt">여유</p>
-							<p class="srch-word-date">05.21</p>
-							<button class="srch-word-del">삭제</button>
+							<a href="#href" class="srch-word-txt">여유</a>
+							<time datetime="2016-05-28" class="srch-word-date">05.28</time>
+							<button type="button" class="srch-word-del"><i class="ico ico-comm ico-clse">삭제</i></button>
 						</li>
 					</ul>
-					<button class="bt-border srch-word-del-all">검색기록 전체삭제</button>
+					<button type="button" class="bt-border bt-srch-del">검색기록 전체삭제</button>
 				</div>
-				<h4 class="srch-word-tit"><a href="javascript;">인기검색어</a></h4>
+				<!-- //최근검색어 -->
+				<!-- 인기검색어 -->
+				<h3 class="srch-word-tit"><a href="#none">인기검색어</a></h3>
 				<div class="srch-word-area">
 					<ol class="srch-word-lst">
 						<li class="srch-word-item">
-							<p class="srch-word-txt">여유</p>
+							<a href="#href" class="srch-word-txt">여유</a>
 							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
 						</li>
 						<li class="srch-word-item">
-							<p class="srch-word-txt">세탁기</p>
+							<a href="#href" class="srch-word-txt">세탁기</a>
 							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
 						</li>
 						<li class="srch-word-item">
-							<p class="srch-word-txt">정관장</p>
+							<p class="srch-word-txt">정관장</a>
 							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-fix">변동없음</i></span>
 						</li>
 						<li class="srch-word-item">
-							<p class="srch-word-txt">여성복</p>
+							<a href="#href" class="srch-word-txt">여성복</a>
 							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
 						</li>
 					</ol>
 				</div>
+				<!-- //인기검색어 -->
 			</div>
+			<!-- //최근검색어 & 인기검색어  -->
 		</div>
 		<!-- //검색 -->
 
@@ -436,7 +443,7 @@
 </div>
 <!-- //wrap -->
 <!-- 스크립트 영역 -->
-<script type="text/javascript" src="../../resources_new/js/jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources_new/js/swiper.js"></script>
 <script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
 <script type="text/javascript" src="../../resources_new/js/jquery-mobile-ui.js"></script>
@@ -447,9 +454,7 @@
 		e.preventDefault();
 		var t = jQuery(this).parent(),
 			isShow = 'is-show';
-		if(t.hasClass(isShow)) {
-			t.removeClass(isShow);
-		} else {
+		if(!t.hasClass(isShow)) {
 			t.siblings().removeClass(isShow);
 			t.addClass(isShow);
 		}
