@@ -3881,7 +3881,10 @@ body.video_pop_open .video_pop{visibility: visible}
 	background-color: transparent;
 	font-size: 14px; color: #666;
 	/*-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;*/
-}
+	}
+	.input-srch:focus::-webkit-input-placeholder {
+		color:#fff;
+	}
 .bt-reset {
 	display: block;
 	position: absolute; top:0; right: 35px;
