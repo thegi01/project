@@ -3884,9 +3884,9 @@ body.video_pop_open .video_pop{visibility: visible}
 	}
 	.input-srch:focus::-webkit-input-placeholder {
 		color:#fff;
-	}
+	}	
 .bt-reset {
-	display: block;
+	/*display: none;*/
 	position: absolute; top:0; right: 35px;
 	width: 20px; height: 100%;
 	}

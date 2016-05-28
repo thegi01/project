@@ -35,12 +35,12 @@
 		<div class="srch">
 			<h2 class="blind">검색</h2>
 			<!-- 검색어 입력폼 -->
-			<form action="/" class="srch-srch">
+			<form action="/" id="total-srch" class="srch-srch">
 				<button class="bt btn-back-w"><i class="ico ico-arr ico-back-w">이전</i></button>
 				<fieldset class="srch-field">
 					<legend>검색어 입력폼</legend>
-					<input type="search" class="input-srch" name="keyword" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" title="검색어 입력" placeholder="검색어를 입력해주세요.">
-					<button type="button" class="bt bt-reset"><i class="ico ico-comm ico-del">검색어 재설정</i></button>
+					<input type="search" id="input-keyword" class="input-srch" name="keyword" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+					<input type="reset" class="bt bt-reset"><i class="ico ico-comm ico-del">검색어 재설정</i></input>
 					<button type="submit" class="btn-srch"><i class="ico ico-layout ico-srch">검색</i></button>
 				</fieldset>
 			</form>
@@ -450,15 +450,7 @@
 <!--<script type="text/javascript" src="../../resources_new/js/video.min.js"></script>-->
 <script type="text/javascript" src="../../resources_new/js/test.js"></script><!--로컬 테스트용 절대 배포금지-->
 <script>
-	jQuery('.srch-word-tit a').click(function(e){
-		e.preventDefault();
-		var t = jQuery(this).parent(),
-			isShow = 'is-show';
-		if(!t.hasClass(isShow)) {
-			t.siblings().removeClass(isShow);
-			t.addClass(isShow);
-		}
-	});
+	jQuery('#total-srch input');
 </script>
 <!-- //스크립트 영역 -->
 </body>
