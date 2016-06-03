@@ -1,0 +1,1377 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!Doctype html>
+<html lang="ko">
+<head>
+<%@ include file="/pub/include_new/head_declare.jsp"%>
+<title>상품명 [드림&amp;쇼핑] 똑똑한 TV쇼핑 - TV홈쇼핑, 모바일TV쇼핑</title>
+<%@ include file="/pub/include_new/head_css.jsp"%>
+<style>
+/* 상품상세 - 청구할인 2016.06.01 */
+.cardTip {margin-top:-6px; background-color:#fff;}
+.cardTip_item {
+	position : relative;
+	overflow: hidden;
+	margin-left: 16px; margin-right: 16px;
+	padding:8px 14px;
+	border:solid 1px #e8ecf1;
+	background-color: #f3f6fa;
+	}
+	.cardTip_item:not(:first-child) {margin-top: 5px;}
+.cardTip .icon_card {
+	float: left;
+	margin-right: 6.5px;
+}
+.cardTip_info {
+	float: left;
+	margin-right: 5px;
+}
+.cardTip_row {
+	line-height:1;
+}
+.cardTip_row:not(:first-child) {
+	margin-top:3px;
+}
+.cardTip_txt1 {
+	font-size: 14px; color: #333;
+}
+.cardTip_txt2 {
+	font-size: 14px; color: #777;
+}
+.cardTip_txt3 {
+	font-size: 12px; color: #333;
+}
+.cardTip_item .btn_cardTip {
+	vertical-align:top;
+}
+.cardTip_item .btn_cardTip .icon_question2 {vertical-align:top;}
+.cardTip_item .btn_cardTip_multi {
+	position:absolute; top:0; right:0;
+	width:35px; height:35px;
+	background-color:#e8ecf1;
+	text-align:center;
+}
+.cardTip_item .btn_cardTip_multi .icon_arr {
+	display: inline-block;
+	width: 14px; height: 7.5px; 
+	margin-top:13px; opacity:0.4;
+	background-image: url("/resources_new/img/icon_arrow_20160602.png"); background-repeat: no-repeat; background-size: 100px auto; background-position: -85px -52px;
+	vertical-align: middle; text-indent:-10000em;
+	}
+	.cardTip_item.open .btn_cardTip_multi .icon_arr {background-position: -85px -44px;}
+.cardTip_cont {
+	display:none;
+	clear:both;
+	margin-left:16px; margin-right:16px;
+	padding:11px 15px 12px;
+	border:solid 1px #e8ecf1; border-top:none;
+	}
+	.cardTip_item.open + .cardTip_cont {display:block;}
+.cardTip_cont_tit {
+	float:left;
+	font-size:12px; color:#333;	
+}
+.cardTip_cont_info {
+	margin-left:80px;
+}
+.cardTip_cont_item:not(:last-child) {
+	margin-bottom:10px;
+}
+.cardTip_cont_txt1 {	
+	margin-bottom:2px;
+	font-size:13px; color:#333;
+	}
+	
+.cardTip_cont_txt2 {
+	font-size:12px; color:#999; line-height:1.3;
+}
+.cardTip_cont_txt2 p {font-size:12px; color:#999;}
+
+
+
+
+
+
+.icon_question2 {
+	display: inline-block; 
+	width: 16px; height: 16px; 
+	background-image: url("/resources_new/img/icon_details_20160601.png"); background-repeat: no-repeat; background-position: -136px -131px; background-size: 320px auto; 
+	vertical-align: middle; text-indent: -9999px; 
+}
+.icon_card {
+	display: inline-block; width: 27px; height: 17px; 
+	background-image: url("/resources_new/img/icon_details_20160601.png"); background-repeat: no-repeat;  background-size: 320px auto; background-position:-106px -131px; 
+	text-indent: -9999px; 
+}
+
+
+
+
+
+
+.popup_m {
+	position : absolute; left:0; right:0;
+	border : solid 1px #d6d8db;
+	background-color:#fff; 
+	margin:5px 16px 0;
+}
+.popup_m_header { /* height : 34px */
+	padding:9px 14px 6px;
+	border-bottom : solid 1px #ddd;
+}
+.popup_m_body {
+	padding:11px 15px 12px;
+}
+.popup_m_tit {
+	font-weight:bold; font-size:13px; color:#000;
+}
+.popup_m .btn_pop_close {
+	display: block; 
+	position: absolute; top: 8px; right:14px; z-index: 89;
+	width: 14px; height: 14px; 
+	background-image: url("/resources_new/img/icon_layout_20160519.png"); background-repeat: no-repeat; background-position: -215px -10px; background-size: 320px auto;
+	text-indent: -9999px; 	
+	cursor: pointer;
+}
+.popup_cardTip {
+	display:none;
+}
+
+
+
+	
+</style>
+</head>
+<body>
+<div class="skip_navi">
+    <a href="#contents">본문 바로가기</a>
+</div> 
+<div id="wrap"><!-- wrap -->
+    <div id="container"><!-- container -->
+        <header class="sub_header"><!-- header -->
+            <h1>상품보기</h1>
+            <button type="button" class="btn_back">이전</button>
+            <span class="btn_home"><a href="#">홈</a></span>
+        </header><!-- //header -->
+        <section id="contents" class="contents"><!-- contents -->
+            <h2 class="blind">상품보기</h2>
+            <div class="banner">
+                <a href="#"><img src="/resources_new/img/tmp/banner1.jpg" alt="banner" /></a>
+            </div>
+            <div class="goods_details">
+                <div class="details_image">
+                    <div class="btn_play"><a href="#">동영상 재생</a></div>
+                    <!-- 2015-04-17 수정 -->
+                    <div class="img_swipe_wrap">
+                        <div class="swiper-goodsdetail">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="/resources_new/img/tmp/a_test_01.jpg" alt="상품1" /></div>
+                                <div class="swiper-slide"><img src="/resources_new/img/tmp/a_test_02.jpg" alt="상품1" /></div>
+                                <div class="swiper-slide"><img src="/resources_new/img/tmp/a_test_03.jpg" alt="상품1" /></div>
+                                <div class="swiper-slide"><img src="/resources_new/img/tmp/a_test_04.jpg" alt="상품1" /></div>
+                                <div class="swiper-slide"><img src="/resources_new/img/tmp/a_test_05.jpg" alt="상품1" /></div>
+                            </div>
+                        </div>
+                        <div class="swipe_circle">
+                            <p class="swiper-pagination">
+                                <!-- [N] 2015-06-03 로딩시 늦게 나타나는 문제로 js에서가 아닌 html에서 넣을수 있게 수정 -->
+                                <a data-slide-index="0" class="swiper-pagination-bullet active"></a>
+                                <a data-slide-index="1" class="swiper-pagination-bullet"></a>
+                                <a data-slide-index="2" class="swiper-pagination-bullet"></a>
+                                <a data-slide-index="3" class="swiper-pagination-bullet"></a>
+                                <a data-slide-index="4" class="swiper-pagination-bullet"></a>
+                                <!-- [N] 2015-06-03 로딩시 늦게 나타나는 문제로 js에서가 아닌 html에서 넣을수 있게 수정 -->
+                            </p>
+                        </div>
+                    </div>
+                    <!-- //2015-04-17 수정 -->
+                </div>
+                <h3 class="details_good_name">한경희 광파오븐홈세프 HO-2000한경희 광파오븐홈세프 HO-2000</h3>
+                <div class="details_box">
+                    <div class="price_benefit">
+                        <dl>
+                            <dt>
+                                혜택가
+                                <span class="icon_qmark">?</span>
+                            </dt>
+                            <dd>
+                                <span class="price"><em>2,000,000</em>원</span>
+                                <span class="price_sell"><em>2,000,000</em>원</span>
+                            </dd>
+                        </dl>
+                        <div class="price_sale">
+                            <ul>
+                                <li>
+                                    <span>즉시할인쿠폰</span><!-- 2015-05-11 용어 수정 -->
+                                    -3,000원
+                                </li>
+                                <li>
+                                    <span>모바일임직원할인</span><!-- 2015-06-16 임직원 추가 -->
+                                    -3,000원
+                                </li>
+                                <li>
+                                    <span>모바일자동주문할인</span><!-- 2015-06-16 용어 수정 --><!-- 2015-05-11 용어 수정 -->
+                                    -1,000원
+                                </li>
+                                <li>
+                                    <span>일시불할인</span>
+                                    -6,000원
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 2016-06-01 카드청구 할인 -->
+                    <div id="cardTip" class="cardTip">
+                        <h5 class="blind">신용카드 청구 할인 정보</h5>
+                        <!-- 청구할인 기준금액 미만 -->
+                        <div class="cardTip_item">
+                            <div class="icon_card"></div>
+                            <div class="cardTip_info">
+                                <p class="cardTip_row"> 
+                                    <span class="cardTip_txt1">신한 5% 청구할인</span><span class="cardTip_txt2">(5만원 이상)</span>
+                                    <a href="javascript:;" class="btn_cardTip"><span class="icon_question2">카드할인안내</span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //청구할인 기준금액 미만 -->
+                        <!-- 청구할인 기준금액 이상 -->
+                        <div class="cardTip_item">
+                            <div class="icon_card"></div>
+                            <div class="cardTip_info">
+                                <p class="cardTip_row"> 
+                                    <span class="cardTip_txt1">국민 5% 청구할인</span>
+                                    <a href="javascript:;" class="btn_cardTip"><span class="icon_question2">카드할인안내</span></a>
+                                </p>
+                                <p class="cardTip_row">
+                                	<span class="cardTip_txt3">청구할인 예정가 7,600원</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //청구할인 기준금액 이상 -->
+                        <!-- 청구할인 프로모션 2개 이상 -->
+                        <div class="cardTip_item">
+                            <div class="icon_card"></div>
+                            <div class="cardTip_info">
+                                <p class="cardTip_row"> 
+                                    <span class="cardTip_txt1">행사카드 7%청구할인</span><span class="cardTip_txt2">(5만원 이상)</span>
+                                    <a href="javascript:;" class="btn_cardTip_multi"><span class="icon_arr">카드할인안내</span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 청구할인 프로모션 2개 이상 상세 -->
+						<div id="cardTipCont" class="cardTip_cont">
+							<h6 class="cardTip_cont_tit">청구할인</h6>
+							<div class="cardTip_cont_info">
+								<div class="cardTip_cont_item">
+									<div class="cardTip_cont_txt1">하나카드 7% 할인</div>
+									<div class="cardTip_cont_txt2">청구할인예정가 : 16,000원</div>
+								</div>
+								<div class="cardTip_cont_item">
+									<div class="cardTip_cont_txt1">NH농협드 7% 할인<span class="cardTip_cont_txt2">(1만원 이상)</span></div>
+									<div class="cardTip_cont_txt2">청구할인예정가 : 16,000원</div>
+								</div>
+								<div class="cardTip_cont_item">
+									<div class="cardTip_cont_txt1">신한카드 7% 할인</div>
+									<div class="cardTip_cont_txt2">청구할인예정가 : 16,000원</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 청구할인 프로모션 2개 이상 상세 -->
+                        <!-- //청구할인 프로모션 2개 이상 -->
+                    </div>
+
+                    
+                    <!-- //2016-06-01 카드청구할인 -->
+                    <!-- 2015-04-21 청구할인카드 영역 수정 -->
+                    <!-- <div class="card_benefit">
+                        <div class="color_bg1">
+                            <div class="card_14">
+                                <div class="cardInfo l2">2016.01.20 서브텍스트 있을경우 l2 클래스 추가
+                                    <p class="card">신한카드 5% 청구할인</p>
+                                    <p class="period">2015.06.01 ~ 2015.06.30</p>
+                                    <p class="memo">카드 결제 금액 5만원 이상 결제 시</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="color_bg2">
+                            <div class="card_12">
+                                <div class="cardInfo">
+                                    <p class="card">삼성카드 5% 청구할인</p>
+                                    <p class="period">2015.06.01 ~ 2015.06.30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- //2015-04-21 청구할인카드 영역 수정 -->
+                    <div class="details_spec">
+                        <dl>
+                            <dt>무이자</dt>
+                            <dd>3개월</dd>
+                        </dl>
+                        <dl>
+                            <dt>적립금</dt>
+                            <dd>1000P (일시불 적용시 900P)</dd><!-- 2015-05-08 적립금 단위 수정 -->
+                        </dl>
+                        <!-- 2015-06-11 쿠폰 추가 -->
+                        <dl>
+                            <dt>쿠폰지급</dt>
+                            <dd>모바일전용 10% 할인쿠폰 (일부상품 제외)</dd>
+                        </dl>
+                        <!-- //2015-06-11 쿠폰 추가 -->
+                        <dl>
+                            <dt>평균배송일</dt>
+                            <dd>3일</dd>
+                        </dl>
+                        <dl class="details_spec_deliver"> <!-- 2016-05-23 클래스 추가 -->
+                            <dt>배송비</dt>
+                            <dd>
+                                무료<br />
+                                2,500원<br />
+                                주문금액 1만원 이상 시 배송비 무료<br />
+                                주문금액 1만원 이상 시 배송비 3,000원<br />
+                            </dd>
+                            <dd>도서산간 배송비 추가<button type="button" id="btnDeliverPay" class="btn_icon_question">상세보기</button></span></dd>
+                        </dl>
+                        <dl>
+                            <dt>사은품</dt>
+                            <dd>
+                                <ul class="gift_list">
+                                    <li>
+                                        <div class="gift_img"><img src="/resources_new/img/tmp/01.jpg" alt="상품1" /></div>
+                                        <div class="gift_name">다이소 냄비받침대</div>
+                                        <div class="gift_date">
+                                            2015.05.16~2015.05.20
+                                            <!-- 2015-06-02 삭제 -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gift_img"><img src="/resources_new/img/tmp/01.jpg" alt="상품1" /></div>
+                                        <div class="gift_name">다이소냄비받침대냄비받침대냄비받침대</div>
+                                        <div class="gift_date">
+                                            2015.05.16~2015.05.20
+                                            <!-- 2015-06-02 삭제 -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div><!-- //details_box -->
+                <div class="details_share">
+                    <!-- 2015-05-12 소스 수정 -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="icon_share_sms">&nbsp;</span>
+                                문자
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon_share_katalk">&nbsp;</span>
+                                카카오톡
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon_share_kass">&nbsp;</span>
+                                카카오스토리
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon_share_facebook">&nbsp;</span>
+                                페이스북
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- //2015-05-12 소스 수정 -->
+                </div><!-- //details_share -->
+                <div class="details_box" id="ui_tab"><!-- 2015-04-17 id명 추가 -->
+                    <ul class="tab_group tab_details"><!-- tab_group -->
+                        <li>
+                            <a class="current" href="#x">상품정보</a>
+                        </li>
+                        <li>
+                            <a href="#x">상품평<span>(9999)</span></a>
+                        </li>
+                        <li>
+                            <a href="#x">Q&amp;A<span>(9999)</span></a>
+                        </li>
+                    </ul><!-- //tab_group -->
+                    <div class="tab_details_info" style="display:block;">
+                        <div class="details_spec">
+                            <dl>
+                                <dt>상품번호</dt>
+                                <dd>2011000</dd>
+                            </dl>
+                            <dl>
+                                <dt>브랜드</dt>
+                                <dd>네오플랜 전골냄비</dd>
+                            </dl>
+                            <dl>
+                                <dt>제조사/원산지</dt>
+                                <dd>코스맥스/한국</dd>
+                            </dl>
+                        </div>
+                        <div class="desc_wrap" id="ui_toggle"><!-- 2015-04-17 id명 추가 -->
+                            <div class="desc">
+                                <div class="desc_tit" active="off"><p>상세정보<em class="icon_arrow"></em></p></div><!-- 2015-05-26 div태그 추가 및 p태그 class명 삭제 --><!-- 2015-05-11 소스수정 -->
+                                <div class="desc_con">
+                                    <!-- 2015-05-06 추가 -->
+                                    <div class="list_nodata">
+                                        <p>상세정보가 없습니다.</p>
+                                    </div>
+                                    <!-- //2015-05-06 추가 -->
+                                    <!-- 2015-05-06 수정 -->
+                                    <div class="desc_images">
+                                        <div class="btn_zoom"><a class="btnType1_h40_org" href="#"><span class="icon_zoom">+</span>확대보기</a></div>
+                                        <p><img src="/resources_new/img/tmp/02.jpg" alt="" /></p>
+                                    </div>
+                                    <!-- //2015-05-06 수정 -->
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <div class="desc_tit" active="off"><p>일반정보<em class="icon_arrow"></em></p></div><!-- 2015-05-26 div태그 추가 및 p태그 class명 삭제 --><!-- 2015-05-11 소스수정 -->
+                                <div class="desc_con">
+                                    <div class="details_spec2">
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt>용량 및 중량</dt>
+                                                    <dd>터치바이이경민 크림인파운데이션 본품 15gx2, 터치바이이경민 림인파운데이션 리필 15gx2, 터치바이이경민 즈브라이터 30gx1, 립케어루즈 3.3g x1, 익스트림 쉴드 데이크림 50ml x1, 익스트림 쉴드 나이트크림 50ml x1, 쉴드마스터2.2ml, 무료체험분1ml</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>제품 주요 사항</dt>
+                                                    <dd>모든피부용</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>사용방법</dt>
+                                                    <dd>일루미네이팅 비즈 브라이터 -> 크림 인 파운 데이션 -> 립케어루즈데이/나이트크림 - 세안 후 크림 단계에서 적당량을 덜어 얼굴 전체에 부드럽게 펴 발라 줍니다. 매직앰플 - 건조하거나 하얗게 각질이 일어난 부위에 발라주신 후 톡톡 두드려 줍니다.</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>제조자 및 제조 판매업자</dt>
+                                                    <dd>
+                                                        제조자: 코스맥스(주)<br />
+                                                        제조판매업자: ㈜비디비치코스메틱<br />
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>원산지</dt>
+                                                    <dd>대한민국</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>주요성분</dt>
+                                                    <dd>
+                                                        파운데이션 주요성분 : 모이스처 킵핑 콤플렉스, 마데카소사이드, 파파야열매추출물, 자작나무수액,대나무수액추출물, 슬리퍼우드잎추출물,산자나무열매추출물외
+                                                        립케어루즈 주요성분 : 바오밥오일, 올리브오일, 아보카도오일, 호호바오일 외
+                                                        데이크림 주요성분 : 스노우알개, 안타티신, 산자나무추출물 외 
+                                                        나이트크림 주요성분 : 산자나무열매추출물, 쉐어버터, 달맞이꽃오일, 호호바씨오일 외 
+                                                        매직앰플 주요성분 : 레몬밤추출물,  윌로우허브 외
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>기능성화장품의 경우 식품의약품 안전청 심사필 유무</dt>
+                                                    <dd>
+                                                        크림 인 파운데이션(미백, 주름개선, 자외선차단) 일루미네이팅 비즈 브라이터(미백, 주름개선) 립케어루즈(주름개선, 자외선차단) 데이&나이트크림 : 주름개선, 미백기능성
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>사용시 주의사항 및 부작용</dt>
+                                                    <dd>
+                                                        상처가 있는 부위에는 사용하지 마십시요.<br />
+                                                        사용후 피부에 자극이 있으면 사용을 중단하십시요.<br />
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>소비자 상담관련 전화번호</dt>
+                                                    <dd>
+                                                        전화번호 : 080-080-4512<br />
+                                                        상담 가능시간 : 오전 9시 30분~ 오후6시<br />
+                                                    </dd>
+                                                </dl>                                           
+                                            </li>
+                                        </ul>
+                                        <p class="gosi">※ 해당 내용은 전자상거래 등에서의 상품정보제공 고시에 따라 작성되었습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <div class="desc_tit" active="off"><p>배송/반품/교환<em class="icon_arrow"></em></p></div><!-- 2015-05-26 div태그 추가 및 p태그 class명 삭제 --><!-- 2015-05-11 소스수정 -->
+                                <div class="desc_con">
+                                    <!-- 2015-05-06 추가 -->
+                                    <div class="list_nodata">
+                                        <p>배송/반품/교환 정보가 없습니다.</p>
+                                    </div>
+                                    <!-- //2015-05-06 추가 -->
+                                    <div class="details_spec2">
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt>배송안내</dt>
+                                                    <dd>입금 확인후 3일이내</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>반품/교환안내</dt>
+                                                    <dd>단순 변심시 배송비 5천원 차감</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>AS안내<dt>
+                                                    <dd>전화번호 : 080-080-4512</dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_details_comment" style="display:none;">
+                        <div class="details_tip">
+                            <p>상품평 작성은 배송완료 상품 중 주문일로부터 90일 이내에 가능하며 적립금 <span class="save">100P</span>를 드립니다.</p><!-- 2015-05-08 적립금 단위 수정 -->
+                            <ul class="btn_full">
+                                <li><a class="btnType2_h50" href="#">상품평 등록</a></li>
+                            </ul>                       
+                        </div>
+                        <!-- [N] 상품평이 없을 경우 -->
+                        <div class="list_nodata" style="display:block;">
+                            <p>등록된 상품평이 없습니다.</p><!-- 2015-05-08 문구 수정 -->
+                        </div>
+                        <!-- [N] 상품평 총점 평점 -->
+                        <div class="comment_score">
+                            <div class="average">
+                                <p class="avg_score">9.0</p>
+                                <p class="avg_count">상품평 평점 (<span class="num">9999</span>건)</p><!-- 2015-05-01 span태그 추가 -->
+                                <span class="star_big"><span style="width:90%;">90%</span></span>
+                            </div>
+                            <ul class="item">
+                                <li>
+                                    <p>
+                                        품질
+                                        <span>9.0</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        가격
+                                        <span>9.0</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        포장
+                                        <span>9.0</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        배송기간
+                                        <span>9.0</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list_wrap" id="ui_toggle"><!-- 2015-04-17 id명 추가 -->
+                            <!-- [N] comment set -->
+                            <div class="comment_list">
+                                <div class="comment_tit">
+                                    <div class="ct_preview"><p>남편이 너무 좋아하네요~</p></div>
+                                    <div class="ct_info">
+                                        <div class="ct_star"><span class="star"><span style="width:90%;">90%</span></span></div>
+                                        <span class="ct_user">dshopp****</span>
+                                        <span class="ct_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="comment_con">
+                                    <div class="ct_cont">
+                                        <!-- 2015-05-12 위치수정 -->
+                                        <ul class="ct_score">
+                                            <li>
+                                                <div class="item">
+                                                    <p>품질</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>가격</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>포장</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>배송기간</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- //2015-05-12 위치수정 -->
+                                        <!-- 2015-05-12 div태그 추가 -->
+                                        <div class="con_text">
+                                            남편이 너무 좋아하네요~<br />
+                                            가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                            냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                        </div>
+                                        <!-- //2015-05-12 div태그 추가 -->
+                                        <ul class="btn_multi">
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">수정</button></span>
+                                            </li>
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">삭제</button></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //[N] comment set -->
+                            <div class="comment_list">
+                                <div class="comment_tit">
+                                    <div class="ct_preview"><p>아내가 너무 좋아하네요~ 너무 좋아하네요~ 아내가 너무 좋아하네요~</p></div>
+                                    <div class="ct_info">
+                                        <div class="ct_star"><span class="star"><span style="width:90%;">90%</span></span></div>
+                                        <span class="ct_user">dshopp****</span>
+                                        <span class="ct_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="comment_con">
+                                    <div class="ct_cont">
+                                        <!-- 2015-05-12 위치수정 -->
+                                        <ul class="ct_score">
+                                            <li>
+                                                <div class="item">
+                                                    <p>품질</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>가격</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>포장</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>배송기간</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- //2015-05-12 위치수정 -->
+                                        <!-- 2015-05-12 div태그 추가 -->
+                                        <div class="con_text">
+                                            아내가 너무 좋아하네요~<br />
+                                            가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                            냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                        </div>
+                                        <!-- //2015-05-12 div태그 추가 -->
+                                        <ul class="btn_multi">
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">수정</button></span>
+                                            </li>
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">삭제</button></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_page_more">
+                                <button>
+                                    <em>10</em>개 더보기<span class="more_count">(10/100)</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="list_wrap" id="ui_toggle"><!-- 2015-04-17 id명 추가 -->
+                            <!-- [N] 식품일경우 -->
+                            <div class="comment_list">
+                                <div class="comment_tit">
+                                    <div class="ct_info">
+                                        <div class="ct_star"><span class="star"><span style="width:50%;">50%</span></span></div>
+                                        <span class="ct_user">dshopp****</span>
+                                        <span class="ct_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="comment_con">
+                                    <div class="ct_cont"><!-- 2015-05-12 class명 수정 -->
+                                        <ul class="ct_score">
+                                            <li>
+                                                <div class="item">
+                                                    <p>품질</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>가격</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>포장</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>배송기간</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="btn_multi">
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">수정</button></span>
+                                            </li>
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">삭제</button></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment_list">
+                                <div class="comment_tit">
+                                    <div class="ct_info">
+                                        <div class="ct_star"><span class="star"><span style="width:90%;">90%</span></span></div>
+                                        <span class="ct_user">dshopp****</span>
+                                        <span class="ct_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="comment_con">
+                                    <div class="ct_cont"><!-- 2015-05-12 class명 수정 -->
+                                        <ul class="ct_score">
+                                            <li>
+                                                <div class="item">
+                                                    <p>품질</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>가격</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>포장</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <p>배송기간</p>
+                                                    <span class="star_small"><span style="width:90%;">90%</span></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_page_more">
+                                <button>
+                                    <em>10</em>개 더보기<span class="more_count">(10/100)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_details_refer" style="display:none;">
+                        <!-- [N] 식품카테고리일 경우 -->
+                        <div class="details_tip">
+                            <p>식품, 일부 의료기기 등은 상품Q&amp;A 이용이 불가능합니다.</p>
+                            <p>문의를 원하실 경우 1:1문의하기를 이용해주시기 바랍니다.</p>
+                            <ul class="btn_full">
+                                <li><a class="btnType2_h50" href="#">1:1 문의하기</a></li>
+                            </ul>
+                        </div>
+                        <!-- [N] 문의가 없을 경우 -->
+                        <div class="details_tip">
+                            <p>상품에 대한 궁금한 점을 물어보세요.</p>
+                            <p>상품문의 외에 결제, 배송, 교환, 반품문의는 고객센터 1:1문의하기를 이용하시기 바랍니다.</p><!-- 2015-05-08 문구 수정 -->
+                            <ul class="btn_full">
+                                <li><a class="btnType2_h50" href="#">문의하기</a></li>
+                            </ul>
+                        </div>
+                        <!-- [N] 문의가 없을 경우 -->
+                        <div class="list_nodata">
+                            <p>등록된 문의가 없습니다.</p><!-- 2015-05-08 문구 수정 -->
+                        </div>
+                        <div class="list_wrap" id="ui_toggle"><!-- 2015-04-17 id명 추가 -->
+                            <!-- [N] comment set -->
+                            <div class="refer_list">
+                                <div class="refer_tit">
+                                    <div class="rt_preview"><p>제조 원산지가 어디인가요?</p></div>
+                                    <div class="rt_info">
+                                        <div class="rt_state"><span class="state_wait">답변대기</span></div>
+                                        <span class="rt_user">dshopp****</span>
+                                        <span class="rt_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="refer_con">
+                                    <div class="rt_cont_question">
+                                        제조 원산지가 어디인가요?<br />
+
+                                        <ul class="btn_multi">
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">수정</button></span>
+                                            </li>
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">삭제</button></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- //[N] comment set -->
+                            <div class="refer_list">
+                                <div class="refer_tit">
+                                    <div class="rt_preview"><p>재입고 문의재입고 문의재입고 문의재입고 문의</p></div>
+                                    <div class="rt_info">
+                                        <div class="rt_state"><span class="state_end">답변완료</span></div>
+                                        <span class="rt_user">dshopp****</span>
+                                        <span class="rt_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="refer_con">
+                                    <div class="rt_cont_question">
+                                        아내가 너무 좋아하네요~<br />
+                                        가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                        냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                    </div>
+                                    <div class="rt_cont_answer">
+                                        <p class="date">[답변] 2015.03.27</p>
+                                        아내가 너무 좋아하네요~<br />
+                                        가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                        냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="refer_list">
+                                <div class="refer_tit">
+                                    <div class="rt_preview rt_secret">
+                                        <p>제조 원산지가 어디인가요?</p>
+                                        <span class="icon_secret">비밀글</span>
+                                    </div>
+                                    <div class="rt_info">
+                                        <div class="rt_state"><span class="state_wait">답변대기</span></div>
+                                        <span class="rt_user">dshopp****</span>
+                                        <span class="rt_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="refer_con">
+                                    <div class="rt_cont_question">
+                                        제조 원산지가 어디인가요?<br />
+
+                                        <ul class="btn_multi">
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">수정</button></span>
+                                            </li>
+                                            <li>
+                                                <span class="button"><button type="button" class="btnType1_h25">삭제</button></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="refer_list">
+                                <div class="refer_tit">
+                                    <div class="rt_preview rt_secret">
+                                        <p>재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의 재입고 문의</p>
+                                        <span class="icon_secret">비밀글</span>
+                                    </div>
+                                    <div class="rt_info">
+                                        <div class="rt_state"><span class="state_end">답변완료</span></div>
+                                        <span class="rt_user">dshopp****</span>
+                                        <span class="rt_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="refer_con">
+                                    <div class="rt_cont_question">
+                                        아내가너무좋아하네요~<br />
+                                        가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                        냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                    </div>
+                                    <div class="rt_cont_answer">
+                                        <p class="date">[답변] 2015.03.27</p>
+                                        아내가 너무 좋아하네요~<br />
+                                        가족들하고 전골요리 해먹을려고 구매했는데 가격대비 만족해요.<br />
+                                        냄비 온기가 오래가서 따뜻하게 먹을 수 있어요.<br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="refer_list">
+                                <div class="refer_tit">
+                                    <div class="rt_preview"><p>제조 원산지가 어디인가요?</p></div>
+                                    <div class="rt_info">
+                                        <div class="rt_state"><span class="state_ing">답변중</span></div>
+                                        <span class="rt_user">dshopp****</span>
+                                        <span class="rt_date">2015.05.24</span>
+                                    </div>
+                                </div>
+                                <div class="refer_con">
+                                    <div class="rt_cont_question">
+                                        제조 원산지가 어디인가요?<br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_page_more">
+                                <button>
+                                    <em>10</em>개 더보기<span class="more_count">(10/100)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- //details_box -->
+            </div><!-- //goods_details -->
+        </section><!-- //contents -->
+        <!-- 푸터영역 -->
+        <%@ include file="/pub/include_new/footer.jsp"%>
+        <!-- //푸터영역 -->
+    </div><!-- //container -->
+
+    <div class="floating_top" style="display:none;"><a href="#top">맨위로</a></div><!-- //floating_top --> 
+    <div class="deem" style="display:none;"></div><!-- //deem -->
+
+    <div class="popup_wrap" style="display:none;"><!-- popup_wrap -->
+        <div class="layer_dim"></div>
+        <div id="pop_telOrder" class="layer_center"><!-- layer_center -->
+            <span class="layer_close"><a>닫기</a></span>
+            <div class="popup_title">간편전화주문</div>
+            <div class="layer_cont tel_order">
+                <p class="txt_speed">휴대폰 번호를 남겨주시면, 상품정보가 상담원에게 전달되어 <span>빠른 주문이 가능</span>합니다.</p><!-- 2015-05-20 span태그 class명 삭제 -->
+                <!-- 2015-05-07 소스 수정 -->
+                <ul class="form_input">
+                    <li>
+                        <div class="form_phone_dash">
+                            <div class="parts">
+                                <select title="전화번호 앞자리 선택">
+                                    <option>010</option>
+                                </select>
+                            </div>
+                            <div class="parts">
+                                <span>-</span>
+                                <input type="tel" value="2345" />
+                            </div>
+                            <div class="parts">
+                                <span>-</span>
+                                <input type="tel" value="6789" />
+                            </div>
+                        </div>
+                        <p class="message_check">휴대폰 번호를 입력하세요.</p>
+                    </li>
+                </ul>
+                <!-- //2015-05-07 소스 수정 -->
+                <p class="txt_once_use">입력하신 정보는 1회 사용 후 소멸되며, 저장되지 않습니다.</p>
+                <ul class="btn_multi multi_half">
+                    <li>
+                        <span class="button"><button type="button" class="btnType1_h40_org" id="pop_close">취소</button></span>
+                    </li>
+                    <li>
+                        <span class="button"><button type="button" class="btnType1_h40_org">등록</button></span>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- //layer_center -->
+    </div><!-- //popup_wrap -->
+
+    <div class="bottom_option_box" style="display:block;"><!-- optionBox -->
+        <div class="opt_before" style="display:block;">
+            <ul class="btn_full">
+                <li>
+                    <span class="button"><button type="button" class="btnType2_h50_org"><span class="cart_icon">장바구니</span>주문하기</button></span>
+                </li>
+                <!-- [N]무형상품 경우 -->
+                <li style="display:none;">
+                    <span class="button"><button type="button" class="btnType2_h50_org">상담신청</button></span>
+                </li>
+                <!-- [N]일시품절 경우 -->
+                <li style="display:none;">
+                    <span class="not_sell">상품이 일시품절 되었습니다.</span><!-- 2015-04-21 class명 수정 -->
+                </li>
+                <!-- [N]판매종료 경우 -->
+                <li style="display:none;">
+                    <span class="not_sell">판매종료 되었습니다.</span><!-- 2015-04-21 class명 수정 -->
+                </li>
+            </ul>
+        </div>
+        <div class="opt_select_wrap"><!-- 2015-11-02 style삭제 -->
+            <div class="opt_drop_btn"><span>옵션드롭버튼</span></div>
+            <div class="opt_drop_box">
+                <div class="opt_scroll overthrow"><!-- 2015-06-09 class명 추가 --><!-- 2015-04-23 추가 -->
+                    <div class="option_box"><!-- 2015-05-15 class명 수정 -->
+                    	<!--
+                        <div class="select_wrap">
+                            <ul class="form_input2">
+                                <li>
+                                    <select>
+                                        <option>상품 옵션을 선택하세요.</option>
+                                        <option>단일옵션</option>
+                                        <option>옵션-11</option>
+                                        <option>옵션2</option>
+                                        <option>옵션3</option>
+                                        <option>옵션4</option>
+                                        <option>옵션5</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="form_input2">
+                                <li>
+                                    <select>
+                                        <option>사은품을 선택하세요.</option>
+                                        <option>사은품-11</option>
+                                        <option>사은품-ab</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option>사은품을 선택하세요.</option>
+                                        <option>사은품-11</option>
+                                        <option>사은품-ab</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>-->
+                        <div class="list_wrap">
+                            <ul class="option_list">
+                            	
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">단일옵션</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt1"><input type="number" id="amouunt1" min="1" max="999" pattern="[0-9]*" value="999" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span><!-- 2015-05-07 삭제아이콘 수정 -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">단일옵션</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt1"><input type="number" id="amouunt1" min="1" max="999" pattern="[0-9]*" value="999" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span><!-- 2015-05-07 삭제아이콘 수정 -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">단일옵션</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt1"><input type="number" id="amouunt1" min="1" max="999" pattern="[0-9]*" value="999" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span><!-- 2015-05-07 삭제아이콘 수정 -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">단일옵션</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt1"><input type="number" id="amouunt1" min="1" max="999" pattern="[0-9]*" value="999" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span><!-- 2015-05-07 삭제아이콘 수정 -->
+                                    </div>
+                                </li>
+                                <!--
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">(선택옵션) 색상 / 사이즈 / 색상 / 사이즈 / 색상 / 사이즈 / 색상 / 사이즈</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt2"><input type="number" id="amouunt2" min="1" max="999" pattern="[0-9]*" value="1" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="selected">
+                                        <p class="goods_name">(선택) 옵션1</p>
+                                        <div class="sel_goods">
+                                            <div class="sel_amount">
+                                                <span class="minus"><button type="button">-</button></span>
+                                                <p><label for="amouunt3"><input type="number" id="amouunt3" min="1" max="999" pattern="[0-9]*" value="1" /></label></p>
+                                                <span class="plus"><button type="button">+</button></span>
+                                            </div>
+                                            <div class="sel_price">
+                                                <span class="price"><em>9,999,000</em>원</span>
+                                            </div>
+                                        </div>
+                                        <span class="icon_del"><button type="button">X</button></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="gift_list">
+                                <li>
+                                    <div class="selected">
+                                        <p class="gift_name">사은품-11</p>
+                                        <span class="icon_del"><button type="button">X</button></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="selected">
+                                        <p class="gift_name">사은품 옵션 사은품 옵션 사은품 옵션 사은품 옵션 사은품 옵션</p>
+                                        <span class="icon_del"><button type="button">X</button></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    총 <span class="price"><em>9,999,000</em>원</span>
+                </div>
+                <!-- 2015-04-23 상담신청 버튼 클릭시 -->
+                <!--
+                <div class="button_wrap" style="display:none;">
+                    <ul class="btn_multi multi_half">
+                        <li>
+                            <span class="button ui-pop-btn" data-pop-id="pop_telOrder"><button type="button" class="btnType2_h50_org"><em class="btn_icon_phone">&nbsp;</em>장바구니</button></span>
+                        </li>
+                        <li>
+                            <span class="button"><button type="button" class="btnType2_h50_org"><em class="btn_icon_mobile">&nbsp;</em>바로주문</button></span>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                <!-- //2015-04-23 상담신청 버튼 클릭시 -->
+                <div class="button_wrap"><!-- 2015-04-23 class명 추가 -->
+                    <ul class="btn_multi multi_half">
+                        <li class="cart"><span class="button"><button type="button">장바구니</button></span></li>
+                        <li class="tell">
+                            <span class="button button ui-pop-btn" data-pop-id="pop_telOrder"><button type="button" class="btnType2_h50_org btn_tel_n">전화주문</button></span><!--2016.01.25 전화주문 클래스&data-pop-id 속성 추가 -->
+                        </li>
+                        <li class="mobile">
+                            <span class="button"><button type="button" class="btnType2_h50_org">모바일주문</button></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- //optionBox -->
+</div><!-- //wrap -->
+
+<!-- popDeliverPay -->
+<div class="popup_wrap" style="display:none">
+    <div class="layer_dim"></div>
+    <!--  popDeliverPay -->
+    <div id="popDeliverPay" class="popup_simple">
+       <span class="layer_close2"><a class="btn_close2">닫기</a></span>
+       <div class="popup_simple_header">
+           <h1 class="popup_simple_title">제주/도서산간 추가 배송비</h1>
+       </div>      
+       <div class="popup_simple_body">
+           <div class="popup_simple_txt">제주/도서산간 지역으로 배송시 추가 배송비가 부가됩니다.</div>
+           <ul class="popup_simple_lst">
+               <li class="popup_simple_item">
+                   <dl class="popup_simple_dl">
+                      <dt>제주</dt><dd><em class="popup_simple_emph">3000</em>원</dd> 
+                   </dl>
+                </li>
+                <li class="popup_simple_item">
+                   <dl class="popup_simple_dl">
+                      <dt>도서산간</dt><dd><em class="popup_simple_emph">5000</em>원</dd> 
+                   </dl>
+               </li>
+           </ul>
+       </div>      
+    </div>
+    <!--  //popDeliverPay -->
+</div>
+
+<!-- popCardTip -->
+<div id="popCardTip" class="popup_m popup_cardTip">
+    <div class="popup_m_header">
+        <h1 class="popup_m_tit">청구할인 카드 안내</h1>
+    </div>
+    <div class="popup_m_body">
+		<div class="cardTip_cont_item">
+		    <div class="cardTip_cont_txt1">신한카드 5% 청구할인</div>
+		    <div class="cardTip_cont_txt2">
+		        <p>- 5만원 이상 결제 시</p>
+		        <p>- 기간 : 2016.06.1 ~ 2016.12.31</p>
+		    </div>
+		</div>
+		<div class="cardTip_cont_item">
+		    <div class="popup_m_txt1 cardTip_cont_txt1">하나카드 7% 할인</div>
+		    <div class="popup_m_txt2 cardTip_cont_txt2">
+		        <p>청구할인 예정가 16,000원</p>
+		    </div>
+		</div>
+		<div class="cardTip_cont_item">
+		    <div class="cardTip_cont_txt1">NH농협카드 7% 할인<span class="cardTip_cont_txt2">(1만원 이상)</span></div>
+		    <div class="cardTip_cont_txt2">
+		        <p>청구할인 예정가 16,000원</p>
+		    </div>
+		</div>
+    </div>
+    <a href="javascript:;" class="btn_pop_close">닫기</a>
+</div>
+<!-- //popCardTip -->
+
+<!-- 스크립트 영역 -->
+<%@ include file="/pub/include_new/script.jsp"%>
+<!-- //스크립트 영역 -->
+<script>
+
+/* 청구 할인 Script */
+ 
+/*
+ * CardTip Control
+ */
+/* var cardTipCtrl = function(){
+    this.popCardTip = jQuery('#popCardTip');
+}
+cardTipCtrl.prototype = {
+    popShow : function(t){
+    	var self = this,
+    		cardTipItem = t.parents('.cardTip_item');
+			valTop = cardTipItem.offset().top + cardTipItem.outerHeight();
+		self.popCardTip.css('top', valTop);
+		self.popCardTip.show();
+    },
+    popHide : function(){
+        this.popCardTip.hide();
+    },
+    multipul : function(t){
+    	var cardTipItem = t.parents('.cardTip_item'),
+	 		isOpen = 'open';
+    	if(cardTipItem.hasClass(isOpen)){
+    		cardTipItem.removeClass(isOpen);
+    	} else {
+    		cardTipItem.addClass(isOpen);
+    	}
+    }
+} */
+if(jQuery('#cardTip')) {
+	// 카드할인안내 안내 > button click >  popup show
+	jQuery('#cardTip .btn_cardTip').click(function(e){
+		e.preventDefault();
+		var popCardTip = new cardTipCtrl();
+		popCardTip.popShow(jQuery(this));
+	});
+	// 카드할인안내 안내 팝업 > close button click > popup hide
+	jQuery('#popCardTip .btn_pop_close').click(function(e){
+		e.preventDefault();
+		var popCardTip = new cardTipCtrl();
+		popCardTip.popHide();
+	});	
+	// 청구할인 프로모션 2개 이상 > 버튼 클릭시 > 상세 정보 show/hide
+	jQuery('#cardTip .btn_cardTip_multi').click(function(e){
+		e.preventDefault();
+		var popCardTip = new cardTipCtrl();
+		popCardTip.multipul(jQuery(this));
+	});
+}
+
+
+
+
+
+/*
+	// 카드할인안내 안내 > button click >  popup show   
+	jQuery('#cardTip .btn_cardTip').click(function(e){
+		e.preventDefault();
+		var popCardTip = jQuery('#popCardTip'),
+			cardItem = jQuery(this).parents('.cardTip_item'),
+			valTop = cardItem.offset().top + cardItem.outerHeight();
+		popCardTip.css('top', valTop);
+		popCardTip.show();
+	});
+	// 카드할인안내 안내 팝업 > close button click > popup hide
+	jQuery('#popCardTip .btn_pop_close').click(function(e){
+		e.preventDefault();
+		jQuery(this).parents('#popCardTip').hide();
+	});	*/
+// 청구할인 프로모션 2개 이상 > 버튼 클릭시 > 상세 정보 show/hide
+/* jQuery('#cardTip .btn_cardTip_multi').click(function(e){
+	e.preventDefault();
+	var cardTipItem = jQuery(this).parents('.cardTip_item'),
+		isOpen = 'open';
+	if(cardTipItem.hasClass(isOpen)){
+		cardTipItem.removeClass(isOpen);
+	} else {
+		cardTipItem.addClass(isOpen);
+	};
+}); */
+	
+
+
+	
+	/* 도서산간 배송비 팝업 show/hide */
+    jQuery('#btnDeliverPay').click(function(e){
+    	jQuery('#popDeliverPay').parents('.popup_wrap').show();
+    });
+    jQuery('#popDeliverPay .btn_close2').click(function(){
+    	jQuery(this).parents('.popup_wrap').hide();
+    });
+</script>
+</body>
+</html>
