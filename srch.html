@@ -13,411 +13,185 @@
 <link rel="shortcut icon" href="../../resources_new/img/android_144x144.png">
 <title>검색 | 신세계TV쇼핑</title>
 <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css">
-<link rel="stylesheet" type="text/css" href="common.css"> 
+<link rel="stylesheet" type="text/css" href="../../resources_new/css/common-cate.css"> 
 </head>
 <body>
 <div class="skip_navi">
 	<a href="#contents">본문 바로가기</a>
 </div>
 <!-- wrap -->
-<div id="wrap" class="category">
+<div id="wrap" >
 	<!-- container -->
-	<div id="container" class="main">
-		<!-- header -->
-		<header class="sub_header">
-			<h1>카테고리</h1>
-			<button type="button" class="btn_back">이전</button>
-			<button type="button" class="btn_srch">검색</button>
-		</header>
-		<!-- //header -->
-		
+	<div id="container">
 		<!-- 검색 -->
-		<div class="srch">
+		<section class="srch">
 			<h2 class="blind">검색</h2>
 			<!-- 검색어 입력폼 -->
-			<form action="/" id="total-srch" class="srch-srch">
-				<button class="bt btn-back-w"><i class="ico ico-arr ico-back-w">이전</i></button>
-				<fieldset class="srch-field">
+			<form action="#form" id="srch" class="srch-srch">
+				<a href="#href" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a> <!-- 마크업 다시 확인 -->
+				<fieldset class="srch-field">	
 					<legend>검색어 입력폼</legend>
-					<input type="search" id="input-keyword" class="input-srch" name="keyword" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" title="검색어 입력" placeholder="검색어를 입력해주세요.">
-					<input type="reset" class="bt bt-reset"><i class="ico ico-comm ico-del">검색어 재설정</i></input>
-					<button type="submit" class="btn-srch"><i class="ico ico-layout ico-srch">검색</i></button>
+					<input type="text" id="srchInput" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+					<button type="button" id="btnSrchClear" class="bt bt-clear"><i class="ico ico-comm">검색어 삭제</i></button>
+					<button type="submit" id="btnSrchSubmit" class="bt bt-srch"><i class="ico ico-layout">검색</i></button>
 				</fieldset>
 			</form>
 			<!-- //검색어 입력폼 -->
 			<!-- 최근검색어 & 인기검색어  -->
-			<div class="srch-word">
+			<div id="srchSuggest" class="srch-suggest">
 				<!-- 최근검색어 -->
-				<h3 class="srch-word-tit is-show"><a href="#none">최근검색어</a></h3>
-				<div class="srch-word-area">
-					<ul class="srch-word-lst">
-						<li class="srch-word-item">
-							<a href="#href" class="srch-word-txt">여유</a>
-							<time datetime="2016-05-28" class="srch-word-date">05.28</time>
-							<button type="button" class="srch-word-del"><i class="ico ico-comm ico-clse">삭제</i></button>
+				<h3 data-srch-tab='1' class="srch-suggest-tit is-show"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none"><span>최근검색어</span> </a>
+				</h3>
+				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 --> 
+					<ul class="srch-suggest-lst">
+						<li data-srch-rank='1' class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-date">05.28</span>
+								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li data-srch-rank='2' class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
+								<span class="srch-suggest-date">05.16</span>
+								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li data-srch-rank='3' class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-date">05.01</span>
+								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li data-srch-rank='4' class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
+								<span class="srch-suggest-date">04.27</span>
+								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li data-srch-rank='5' class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
+								<span class="srch-suggest-date">03.18</span>
+								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
 						</li>
 					</ul>
-					<button type="button" class="bt-border bt-srch-del">검색기록 전체삭제</button>
+					<div class="bt-area bt-area-center">
+						<button type="button" id="btnDelAll" class="bt bt-txt bt-simple">검색기록 전체삭제</button>
+					</div>
 				</div>
 				<!-- //최근검색어 -->
 				<!-- 인기검색어 -->
-				<h3 class="srch-word-tit"><a href="#none">인기검색어</a></h3>
-				<div class="srch-word-area">
-					<ol class="srch-word-lst">
-						<li class="srch-word-item">
-							<a href="#href" class="srch-word-txt">여유</a>
-							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
+				<h3 data-srch-tab='2' class="srch-suggest-tit"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none"><span>인기검색어</span> </a>
+				</h3>
+				<div id="srchPopular" class="srch-suggest-area srch-suggest-popular grid"> <!-- '인기 검색어'에 'srch-suggest-popular' class 적용, 최근검색어와 비교 : 'gird' class 추가  -->
+					<ol class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">1<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
+							</a>
 						</li>
-						<li class="srch-word-item">
-							<a href="#href" class="srch-word-txt">세탁기</a>
-							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">2<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">세탁기</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+							</a>
 						</li>
-						<li class="srch-word-item">
-							<p class="srch-word-txt">정관장</a>
-							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-fix">변동없음</i></span>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">3<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+							</a>
 						</li>
-						<li class="srch-word-item">
-							<a href="#href" class="srch-word-txt">여성복</a>
-							<span class="srch-word-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">4<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">5<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
+							</a>
+						</li>
+					</ol>
+					<ol class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">6<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">세탁기</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">7<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">8<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">9<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">10<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복 여성복 여성복 여성복 여성복 여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
 						</li>
 					</ol>
 				</div>
 				<!-- //인기검색어 -->
 			</div>
 			<!-- //최근검색어 & 인기검색어  -->
-		</div>
-		<!-- //검색 -->
-
-		<!-- contents -->
-		<section id="contents" class="contents">
-			<h2 class="blind">카테고리</h2>
-			<!-- Category Navigation --> <!-- 2016.05.27 클래스명 수정, nav-category -> nav-cate -->
-			<nav class="nav-cate">
-				<div class="nav-cate-row">
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000004"></span>
-							<span class="nav-cate-title">패션 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">여성의류</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">남성의류</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">언더웨어</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000005"></span>
-							<span class="nav-cate-title">잡화 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">패션슈즈</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">잡화</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">시계/쥬얼리</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000007"></span>
-							<span class="nav-cate-title">식품 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">농산물</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">수산물</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">축산물</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">가공식품</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">건강식품</a></li>
-					</ul>
-				</div>
-				<div class="nav-cate-row">
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000008"></span>
-							<span class="nav-cate-title">주방<i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">주방가전</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000009"></span>
-							<span class="nav-cate-title">생활 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">주방용품</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">생활/잡화</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">교육문화</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000010"></span>
-							<span class="nav-cate-title">가구/침구 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">가구</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">침구/침장</a></li>
-					</ul>
-				</div>
-				<div class="nav-cate-row">
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000011"></span>
-							<span class="nav-cate-title">건강/레저 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">여행/예약서비스</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">보험금융</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">렌탈 및 기타서비스</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">생활/잡화</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">건강/헬스</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">스포츠레저캠핑</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000012"></span>
-							<span class="nav-cate-title">가전 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">생활가전</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">대형가전</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">기타</a></li>
-					</ul>
-					<div class="nav-cate-d1">
-						<a href="#none" class="nav-cate-d1-a">
-							<span class="ico ico-cate ico-cate-20000006"></span>
-							<span class="nav-cate-title">뷰티 <i class="blind">하위 메뉴</i> </span>
-						</a>
-					</div>
-					<ul class="nav-cate-d2">
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">전체보기</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">화장품</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">이미용품</a></li>
-						<li class="nav-cate-d2-item"><a href="#href" class="nav-cate-d2-a">이미용기기</a></li>
-					</ul>
-				</div>
-			</nav>
-			<!-- //Category Navigation -->
-			<!-- 추천 기획전 -->
-			<div class="h3-tit">
-				<h3 class="h3-txt">추천기획전</h3>
-			</div>
-			<ul class="lst-border">
-				<li class="lst-border-item">
-					<a href="#href" class="lst-border-a">
-						<p class="lst-border-txt-area">
-							<em class="lst-border-sjt">[여유]</em>
-							<span class="lst-border-txt">THE SLOW LIFE 여유 런칭</span>
-						</p>
-						<i class="ico ico-flag ico-new">new</i>
-						<span class="ico ico-arr"></span> <!-- naming?? -->
-					</a>
-				</li>
-				<li class="lst-border-item">
-					<a href="#href" class="lst-border-a">
-						<p class="lst-border-txt-area">
-							<em class="lst-border-sjt">[릴레이 한정 특가]</em>
-							<span class="lst-border-txt">호두파운드+잉글리쉬 파운드 호두파운드 잉글리쉬 파운드</span>
-						</p>
-						<i class="ico ico-flag ico-new">new</i>
-						<span class="ico ico-arr"></span>
-					</a>
-				</li>
-				<li class="lst-border-item">
-					<a href="#href" class="lst-border-a">
-						<p class="lst-border-txt-area">
-							<em class="lst-border-sjt">[기부米]</em>
-							<span class="lst-border-txt">수익금, 전액 기부합니다.</span>
-						</p>
-						<span class="ico ico-arr"></span>
-					</a>
-				</li>
-				<li class="lst-border-item">
-					<a href="#href" class="lst-border-a">
-						<p class="lst-border-txt-area">
-							<em class="lst-border-sjt">[펫 상품전!]</em>
-							<span class="lst-border-txt">반려견을 위해 준비하세요.</span>
-						</p>
-						<span class="ico ico-arr"></span>
-					</a>
-				</li>
-				<li class="lst-border-item">
-					<a href="#href" class="lst-border-a">
-						<p class="lst-border-txt-area">
-							<em class="lst-border-sjt">[비디오픽]</em>
-							<span class="lst-border-txt">맛며느리가 맛 봐드립니다.</span>
-						</p>
-						<span class="ico ico-arr"></span>
-					</a>
-				</li>
-			</ul>
-			<!-- //추천 기획전 -->
 		</section>
-		<!-- //contents -->
-        <!-- footer -->
-        <footer id="footer">
-            <div class="foot_button">
-                <ul>
-                    <li>
-                        <a href="#">고객센터</a>
-                    </li>
-                    <li>
-                        <a href="#">최근본상품</a>
-                    </li>
-                    <li>
-                        <a href="#">로그인</a>
-                        <a style="display:none;" href="#">로그아웃</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="mall_noti">
-                <address>
-                    <p>주식회사 신세계티비쇼핑</p>
-                    <p>
-                        대표이사 : 김군선&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        사업자등록번호 : 502-86-28395
-                    </p>
-                    <p>통신판매업 신고번호 : 2015-서울성동-01053호</p>
-                    <p>개인정보관리책임자 : 주용노</p>
-                    <p>주소 : 서울특별시 성동구 아차산로 92, 12층(성수동2가, 광명타워)</p>
-                    <p>호스팅 서비스 사업자 : 주식회사 신세계티비쇼핑</p>
-                    <p>이메일 : customer@shinsegaetvshopping.com</p><!-- 2015-05-29 위치이동 -->
-                </address>
-                <div class="customer_noti">
-                    <!-- 2015-05-29 소스 수정 -->
-                    <a class="btn_cust_tel" href="tel:080-770-8989"><em class="icon_tel">&nbsp;</em>080-770-8989</a>
-                    <a class="btn_biz_info" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1048529612">사업자번호확인</a>
-                    <!-- //2015-05-29 소스 수정 -->
-                </div>
-            </div>
-            <div class="uSafe_noti">
-                <p class="uSafe_tit">소비자피해보상보험 가입사실확인 : 주식회사 신세계티비쇼핑</p>
-                <p>(고객님은 안전한 거래를 위해 현금등으로 결제시 저희 쇼핑몰에서 가입한 구매안전 서비스 소비자피해 보상보험서비스를 이용하실 수 있습니다. *보상대상 : 미배송, 환불거부, 쇼핑몰부도)</p>
-            </div>
-            <ul class="foot_menu">
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보취급방침</a></li>
-                <li><a href="#">청소년 보호정책</a></li><!-- 2015-04-27 추가 -->
-            </ul>
-        </footer>
-        <!-- //footer -->
+		<!-- //검색 -->
     </div>
     <!-- //container -->
-    <!-- 사이드바영역 -->
-    <div id="side_menu" class="type2">
-	    <div class="top_wrap">
-	    	<div class="not_login" style="display: none"><a href="#">로그인 해주세요</a></div>
-	    	<div class="login"><a href="tv_broadcast_new_login.jsp">김드림님</a><i class="mem_class">임직원 가족</i><a href="#" class="logout_bt">로그아웃</a></div>
-	    </div>
-		<div class="sidemenu_iscroll">
-			<div>
-			    <div class="guest_have_wrap cont_box">
-			    	<a href="#" class="point">
-			    		<strong class="tit">적립금</strong>
-			    		<p><i class="icon"> </i> <span class="cont"><b>50,000,000</b><i>P</i></span></p>
-			    	</a>
-			    	<a href="#" class="coupon">
-			    		<strong class="tit">쿠폰</strong>
-			    		<p><i class="icon"> </i> <span class="cont"><b>5</b><i>장</i></span></p>
-			    	</a>
-			    </div>
-			    <ul class="guest_quick cont_box">
-			    	<li><a href="#"><i class="icon"><!--<em class="new_num">99+</em>--></i>장바구니</a></li>
-			    	<li><a href="#"><i class="icon"><!--<em class="new_num">10</em>--></i>배송조회</a><!--<em class="new_icon">new</em>--></li>
-			    	<li><a href="#"><i class="icon"> </i>주문취소/변경</a></li>
-			    	<li><a href="#"><i class="icon"> </i>교환/반품</a></li>
-			    	<li><a href="#"><i class="icon"> </i>마이쇼핑</a></li>
-			    	<li><a href="#"><i class="icon"> </i>고객센터</a></li>
-			    </ul>
-			    
-			    <div class="history_view_wrap cont_box">
-			    	<div class="title_wrap">
-			    		<strong>최근 본 상품</strong>
-			    		<a href="#">전체보기</a>
-			    	</div>
-			    	<div class="history_view_list">
-			    		<ul class="swiper-wrapper">
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/054/10001054_s_20150915104405.jpg" alt=""><div class="s_soldout small"> </div></div>프리미엄냄비 프리미엄냄비 프리미엄냄비 프리미엄냄비 프리미엄냄비</a></li><!--2016.01.21 매진처리 추가, thumb 태그 추가 -->
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/036/10001036_s_20150911175855.jpg" alt=""></div>터보 청소기</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/986/10000986_s_20150911172028.jpg" alt=""></div>전기 포트</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/019/10001019_s_20150911172432.jpg" alt=""></div>소니 카메라</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/992/10000992_s_20150911182617.jpg" alt=""></div>프리미엄냄비</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/054/10001054_s_20150915104405.jpg" alt=""></div>프리미엄냄비</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/036/10001036_s_20150911175855.jpg" alt=""></div>터보 청소기</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/986/10000986_s_20150911172028.jpg" alt=""></div>전기 포트</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/019/10001019_s_20150911172432.jpg" alt=""></div>소니 카메라</a></li>
-			    			<li class="swiper-slide"><a href="#"><div class="thumb"><img src="http://img.dreamshopping.co.kr/goods/992/10000992_s_20150911182617.jpg" alt=""></div>프리미엄냄비</a></li>
-			    		</ul>
-			    	</div>
-			    </div>
-			    <div class="category_wrap cont_box">
-			    	<div class="title_wrap">
-				    	<strong>카테고리</strong>
-			    	</div>
-			    	<ul class="category_list">
-			    		<li><a href="#"><i class="icon"> </i><span>패션</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>잡화</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>뷰티</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>식품</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>주방</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>생활</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>가구/침구</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>건강/레저</span></a></li>
-			    		<li><a href="#"><i class="icon"> </i><span>가전</span></a></li>
-			    		<li class="none">&nbsp; </li>
-			    	</ul>
-			    </div>
-				<ul class="util_quick cont_box">
-					<li class="login" style="display: none"><a href="#">로그인</a></li>
-					<li class="login"><a href="#">로그아웃</a></li>
-					<li class="setting"><a href="#">설정</a></li>
-				</ul>
-				<ul class="util_quick cont_box">
-					<li class="login"><a href="#">로그아웃</a></li>
-				</ul>
-				<div class="foot_wrap">
-					<dl class="guest_center">
-						<dt>고객센터 080-770-8989</dt>
-						<dd>24시간 상담문의 가능</dd>
-					</dl>
-				</div>
-			</div>
-		</div>
-		<a href="#" class="xbtn"><i>사이드메뉴 닫기버튼</i></a>
-	</div>
-    <!-- //사이드바영역 -->
+   
+
+
+
     <!-- 액션바영역 -->
-    <div class="floating_top" style="display:none;"><a href="#top">맨위로</a></div><!-- //floating_top -->
-	<div class="deem"> </div><!-- //deem --><!----><!--그랜드오픈 수정 style 제거-->
-    <div id="actionBar"><!-- actionBar -->
+    <div class="floating_top" style="display:none;"><a href="#top">맨위로</a></div>
+	<div class="deem"> </div>
+    <div id="actionBar">
         <ul>
-            <li><a class="on" href="#"><em class="icon_home"> </em>홈</a></li><!-- 그랜드오픈 수정 -->
-            <li><a class="blp_open_bt" href="javascript:"><em class="icon_myshop"> </em>카테고리</a></li><!-- 그랜드오픈 수정 -->
-            <li><a class="" href="javascript:"><em class="icon_cart"> </em>장바구니</a></li><!-- 그랜드오픈 수정 -->
-            <li><a class="" href="javascript:"><em class="icon_customer"> </em>마이쇼핑</a></li><!-- 그랜드오픈 수정 -->
+            <li><a class="on" href="#"><em class="icon_home"> </em>홈</a></li>
+            <li><a class="blp_open_bt" href="javascript:"><em class="icon_myshop"> </em>카테고리</a></li>
+            <li><a class="" href="javascript:"><em class="icon_cart"> </em>장바구니</a></li>
+            <li><a class="" href="javascript:"><em class="icon_customer"> </em>마이쇼핑</a></li>
         </ul>
     </div><!-- //actionBar -->
-	<a href="#" class="bottom_ficon" style="display: none"><span>편성표</span></a><!--그랜드오픈 왼쪽 플로팅아이콘 추가-->
-    <div class="bottom_layerpop"><!--그랜드오픈 수정 하단 레이어팝 요소 추가 start-->
+	<a href="#" class="bottom_ficon" style="display: none"><span>편성표</span></a>
+    <div class="bottom_layerpop">
     	<div class="cont">
 	    	<div class="foot_category_wrap cont_box">
 				<div class="title_wrap"> 
 		    		<strong>카테고리를 선택하세요</strong>
 				</div>
-		    	<ul class="category_list2"><!--2015-10-29 카테고리 네이밍변경 start-->
+		    	<ul class="category_list2">
 		    		<li class="swiper-slide a20000004"><a href="/dreamshopping/pub/main/category_new.jsp" class="current"><i class="icon"> </i><span>패션</span></a></li>
 		    		<li class="swiper-slide a20000005"><a href="#"><i class="icon"> </i><span>잡화</span></a></li>
 		    		<li class="swiper-slide a20000006"><a href="#"><i class="icon"> </i><span>뷰티</span></a></li>
@@ -428,29 +202,88 @@
 		    		<li class="swiper-slide a20000011"><a href="#"><i class="icon"> </i><span>건강/레저</span></a></li>
 		    		<li class="swiper-slide a20000012"><a href="#"><i class="icon"> </i><span>가전</span></a></li>
 		    		<li class="swiper-slide all"><a href="#"><i class="icon"> </i><span>전체</span></a></li>
-		    	</ul><!--2015-10-29 카테고리 네이밍변경 end-->
+		    	</ul>
 			    <a href="javascript:" class="xbtn"><span>카테고리 닫기</span></a>
 		    </div>
     	</div>
-    </div><!--그랜드오픈 수정 하단 레이어팝 요소 추가 start-->
-    <div class="loading_wrap"><!-- loading_wrap -->
+    </div>
+    <div class="loading_wrap">
         <div class="layer_dim"> </div>
-        <div id="ui_loading" class="layer_center" data-pop-id="ui_loading"><!-- layer_center -->
+        <div id="ui_loading" class="layer_center" data-pop-id="ui_loading">
             <div class="ui-loading active"><img src="../../resources_new/img/loading.png" alt=""></div>
-        </div><!-- //layer_center -->
+        </div>
     </div>
     <!-- //액션바영역 -->
 </div>
 <!-- //wrap -->
 <!-- 스크립트 영역 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources_new/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="../../resources_new/js/swiper.js"></script>
 <script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
 <script type="text/javascript" src="../../resources_new/js/jquery-mobile-ui.js"></script>
-<!--<script type="text/javascript" src="../../resources_new/js/video.min.js"></script>-->
-<script type="text/javascript" src="../../resources_new/js/test.js"></script><!--로컬 테스트용 절대 배포금지-->
+<script type="text/javascript" src="../../resources_new/js/video.min.js"></script>
+<!-- <script type="text/javascript" src="../../resources_new/js/test.js"></script> --><!--로컬 테스트용 절대 배포금지-->
 <script>
-	jQuery('#total-srch input');
+	
+	/* 검색 > 검색어(keyword) reset button Control */
+	// 검색어 입력시 reset button 보이기/가리기
+	$('#srch #srchInput').bind('focusin focusout keyup', function() {
+		var t = jQuery(this),
+			btnSrchClear = t.siblings('#btnSrchClear');
+		if(t.val()){
+			btnSrchClear.show();
+		} else{
+			btnSrchClear.hide();
+		}
+	});
+	// 검색어 reset button 클릭시 
+	$('#srch #btnSrchClear').click(function() {
+		var t = jQuery(this),
+			srchInput =t.siblings('#srchInput') ;
+		srchInput.val('').focus();
+		t.hide();
+	});
+
+	/* 최금검색어 & 인기검색어 > 보이기/가리기 */
+	jQuery('[data-srch-tab] a').click(function(e){
+		e.preventDefault();
+		var tit = jQuery(this).parent('[data-srch-tab]'),
+			isShow = 'is-show';
+		if(!tit.hasClass(isShow)) {
+			tit.siblings('.'+isShow).removeClass(isShow);
+			tit.addClass(isShow);
+		}
+	});
+	/*jQuery('.srch-suggest-tit a').click(function(e){
+		e.preventDefault();
+		var tit = jQuery(this).parent('.srch-suggest-tit'),
+			isShow = 'is-show';
+		if(tit.hasClass(isShow)) {
+			return;
+		} else {
+			tit.siblings('.'+isShow).removeClass(isShow);
+			tit.addClass(isShow);
+		}
+	});*/
+
+	/* 최근 검색어 > 아이템별 삭제 */
+	jQuery('#srchSuggest [data-srch-rank] .bt-clse').click(function(e){
+		e.preventDefault();
+		jQuery(this).parents('[data-srch-rank]').remove();
+	});
+	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
+		e.preventDefault();
+		jQuery(this).parents('.srch-suggest-item').remove();
+	});*/
+
+	/* 최근 검색어 > 검색기록 전체 삭제 */
+	jQuery('#btnDelAll').click(function(e){
+		e.preventDefault();
+		var t = jQuery(this);
+		t.parents('.srch-suggest-area').find('.srch-suggest-lst').remove();
+		t.remove();
+	});
+
 </script>
 <!-- //스크립트 영역 -->
 </body>
