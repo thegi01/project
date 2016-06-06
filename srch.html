@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no">
-<meta name="viewport" content="width=device-width, initial-scable=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
-<link rel="apple-touch-icon" href="../../resources_new/img/ios_144x144.png">
+<!-- <meta name="viewport" content="width=device-width, initial-scable=1.0, maximum-scale=1.0, user-scalable=no" id="viewport"> -->
+<!-- <link rel="apple-touch-icon" href="../../resources_new/img/ios_144x144.png">
 <link rel="apple-touch-icon-precomposed" href="../../resources_new/img/ios_57x57.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../resources_new/img/ios_72x72.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../resources_new/img/ios_114x114.png">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../resources_new/img/ios_144x144.png">
 <link rel="icon" href="../../resources_new/img/android_144x144.png">
-<link rel="shortcut icon" href="../../resources_new/img/android_144x144.png">
+<link rel="shortcut icon" href="../../resources_new/img/android_144x144.png"> -->
 <title>검색 | 신세계TV쇼핑</title>
-<link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css"> -->
 <link rel="stylesheet" type="text/css" href="common.css"> 
 <style>
 	.srch-suggest-a .bt-clse {background: gray;}
@@ -31,7 +31,7 @@
 			<h2 class="blind">검색</h2>
 			<!-- 검색어 입력폼 -->
 			<form action="#form" id="srch" class="srch-srch">
-				<a href="#href" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a> <!-- 마크업 다시 확인 -->
+				<a href="#href" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a> <!-- 마크업 변경 -->
 				<fieldset class="srch-field">	
 					<legend>검색어 입력폼</legend>
 					<input type="text" id="srchInput" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
@@ -43,40 +43,40 @@
 			<!-- 최근검색어 & 인기검색어  -->
 			<div id="srchSuggest" class="srch-suggest">
 				<!-- 최근검색어 -->
-				<h3 data-srch-tab='1' class="srch-suggest-tit is-show"> <!-- 활성화 tab에 'is-show' 추가 -->
-					<a href="#none"><span>최근검색어</span> </a>
+				<h3 class="srch-suggest-tit is-show"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none" data-srch-tab='1'><span>최근검색어</span> </a>
 				</h3>
 				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 --> 
-					<ul class="srch-suggest-lst">
+					<ul data-srch-content="suggest-lst" class="srch-suggest-lst">
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a">
 								<p class="srch-suggest-txt">여유</p>
 								<span class="srch-suggest-date">05.28</span>
-								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
 								<span class="srch-suggest-date">05.16</span>
-								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
 								<span class="srch-suggest-date">05.01</span>
-								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
 								<span class="srch-suggest-date">04.27</span>
-								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
 								<span class="srch-suggest-date">03.18</span>
-								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 					</ul>
@@ -86,11 +86,11 @@
 				</div>
 				<!-- //최근검색어 -->
 				<!-- 인기검색어 -->
-				<h3 data-srch-tab='2' class="srch-suggest-tit"> <!-- 활성화 tab에 'is-show' 추가 -->
-					<a href="#none"><span>인기검색어</span> </a>
+				<h3 class="srch-suggest-tit"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none" data-srch-tab='2'><span>인기검색어</span> </a>
 				</h3>
 				<div id="srchPopular" class="srch-suggest-area srch-suggest-popular grid"> <!-- '인기 검색어'에 'srch-suggest-popular' class 적용, 최근검색어와 비교 : 'gird' class 추가  -->
-					<ol class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
+					<ol data-srch-content="suggest-lst" class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a">
 								<span class="number number-ty1 number-emph">1<i class="blind">위</i></span>
@@ -127,7 +127,7 @@
 							</a>
 						</li>
 					</ol>
-					<ol class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
+					<ol data-srch-content="suggest-lst" class="srch-suggest-lst col s3"> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a">
 								<span class="number number-ty1">6<i class="blind">위</i></span>
@@ -221,15 +221,16 @@
 <!-- //wrap -->
 <!-- 스크립트 영역 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../resources_new/js/swiper.js"></script>
+<!-- <script type="text/javascript" src="../../resources_new/js/swiper.js"></script> -->
 <script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
 <script type="text/javascript" src="jquery-mobile-ui.js"></script>
 <script type="text/javascript" src="../../resources_new/js/video.min.js"></script>
 <!-- <script type="text/javascript" src="../../resources_new/js/test.js"></script> --><!--로컬 테스트용 절대 배포금지-->
 <script>
 	
-	/* 검색 > 검색어(keyword) reset button Control */
-	// 검색어 입력시 reset button 보이기/가리기
+	/* 검색 */
+
+	// 검색 > 검색어 입력 시 > reset button 보이기/가리기
 	$('#srch #srchInput').bind('focusin focusout keyup', function() {
 		var t = jQuery(this),
 			btnSrchClear = t.siblings('#btnSrchClear');
@@ -237,23 +238,24 @@
 			btnSrchClear.show();
 		} else{
 			btnSrchClear.hide();
-		}
+		};
 	});
-	// 검색어 reset button 클릭시 
-	$('#srch #btnSrchClear').click(function() {
-		var t = jQuery(this),
-			srchInput =t.siblings('#srchInput') ;
-		srchInput.val('').focus();
+
+	// 검색 > reset button 클릭 시 > 검색어 reset
+	$('#srch #btnSrchClear').click(function(e) {
+		e.preventDefault();
+		var t = jQuery(this);
+		t.siblings('#srchInput').val('').focus();
 		t.hide();
 	});
 
-	/* 최금검색어 & 인기검색어 > 보이기/가리기 */
+	// 최근검색어 & 인기검색어 > 보이기/가리기 
 	document.getElementById('srchSuggest').onclick = function(e){
-		if(!e.target.parentElement.dataset.srchTab) return;
 		e.preventDefault();
+		if( !(e.target.dataset.srchTab) ) return;
 		var tit = e.target.parentElement,
 			isShow = 'is-show';
-		if(!tit.classList.contains(isShow)) {
+		if( !tit.classList.contains(isShow) ) {
 			tit.parentElement.getElementsByClassName(isShow)[0].classList.remove(isShow);
 			tit.classList.add(isShow);
 		};
@@ -279,10 +281,10 @@
 		}
 	});*/
 
-	/* 최근 검색어 > 아이템별 삭제 */
+	// 최근 검색어 > 아이템별 삭제 
 	document.getElementById('srchRecent').onclick = function(e){
-		if(!(e.target.dataset.rol=='item-del')) return;
 		e.preventDefault();
+		if( !(e.target.dataset.srchBtn == 'item-del') ) return;
 		e.target.parentElement.parentElement.remove();
 	};
 	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
@@ -294,12 +296,17 @@
 		jQuery(this).parents('.srch-suggest-item').remove();
 	});*/
 
-	/* 최근 검색어 > 검색기록 전체 삭제 */
-	jQuery('#btnDelAll').click(function(e){
+	// 최근 검색어 > 검색기록 전체 삭제 
+	jQuery('#srchRecent #btnDelAll').click(function(e){
 		e.preventDefault();
 		var t = jQuery(this);
-		t.parent('.bt-area').prev().remove();
+		t.parents('#srchRecent').find('[data-srch-content]').remove();
 		t.remove();
+		/*if(t.parent().prev().dataset.srchContent == 'suggest-lst') {
+			t.parent().prev().remove();
+			t.remove();
+		}*/
+		
 	});
 
 </script>
