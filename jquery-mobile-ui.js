@@ -907,7 +907,19 @@ $(document).ready(function() {
 /*
  * CardTip Control
  */
-var cardTipCtrl = function(){
+function cardTipCtrl(t){
+	var cardTipItem = t.parents('.cardTip_item'),
+        isOpen = 'open';
+    if(cardTipItem.hasClass(isOpen)){
+        cardTipItem.removeClass(isOpen);
+    } else {
+        cardTipItem.addClass(isOpen);
+    }
+}
+function popupMHide(t){
+	t.parents('.popup_m').prev().removeClass('open');
+}
+/*var cardTipCtrl = function(){
     this.popCardTip = jQuery('#popCardTip');
 }
 cardTipCtrl.prototype = {
@@ -930,7 +942,8 @@ cardTipCtrl.prototype = {
     		cardTipItem.addClass(isOpen);
     	}
     }
-}
+}*/
+
 
 //기획전에서 컨텐츠영역으로 스크롤 이동시키는거
 function plan_go_cont(){

@@ -59,7 +59,10 @@
 .cardTip_item .btn_cardTip {
 	vertical-align:top;
 }
-.cardTip_item .btn_cardTip .icon_question2 {vertical-align:top;}
+.cardTip_item .btn_cardTip .icon_question2 {
+    vertical-align:top;
+    background-color:gray;
+}
 .cardTip_item .btn_cardTip_multi {
 	position:absolute; top:0; right:0;
 	width:35px; height:35px;
@@ -125,7 +128,7 @@
 
 
 .popup_m {
-	position : absolute; left:0; right:0;
+	position : absolute; left:0; right:0; z-index: 1;
 	border : solid 1px #d6d8db;
 	background-color:#fff; 
 	margin:5px 16px 0;
@@ -147,10 +150,12 @@
 	background-image: url("/resources_new/img/icon_layout_20160519.png"); background-repeat: no-repeat; background-position: -215px -10px; background-size: 320px auto;
 	text-indent: -9999px; 	
 	cursor: pointer;
+    background-color: gray;
 }
 .popup_cardTip {
 	display:none;
-}
+    }
+    .cardTip_item.open + .popup_cardTip {display: block;}
 
 
 
@@ -250,6 +255,35 @@
                             </div>
                         </div>
                         <!-- //청구할인 기준금액 미만 -->
+                        <!-- popCardTip -->
+                        <div class="popup_m popup_cardTip">
+                            <div class="popup_m_header">
+                                <h1 class="popup_m_tit">청구할인 카드 안내</h1>
+                            </div>
+                            <div class="popup_m_body">
+                                <div class="cardTip_cont_item">
+                                    <div class="cardTip_cont_txt1">신한카드 5% 청구할인</div>
+                                    <div class="cardTip_cont_txt2">
+                                        <p>- 5만원 이상 결제 시</p>
+                                        <p>- 기간 : 2016.06.1 ~ 2016.12.31</p>
+                                    </div>
+                                </div>
+                                <div class="cardTip_cont_item">
+                                    <div class="popup_m_txt1 cardTip_cont_txt1">하나카드 7% 할인</div>
+                                    <div class="popup_m_txt2 cardTip_cont_txt2">
+                                        <p>청구할인 예정가 16,000원</p>
+                                    </div>
+                                </div>
+                                <div class="cardTip_cont_item">
+                                    <div class="cardTip_cont_txt1">NH농협카드 7% 할인<span class="cardTip_cont_txt2">(1만원 이상)</span></div>
+                                    <div class="cardTip_cont_txt2">
+                                        <p>청구할인 예정가 16,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="btn_pop_close">닫기</a>
+                        </div>
+                        <!-- //popCardTip -->
                         <!-- 청구할인 기준금액 이상 -->
                         <div class="cardTip_item">
                             <div class="icon_card"></div>
@@ -264,6 +298,35 @@
                             </div>
                         </div>
                         <!-- //청구할인 기준금액 이상 -->
+                        <!-- popCardTip -->
+                        <div class="popup_m popup_cardTip">
+                            <div class="popup_m_header">
+                                <h1 class="popup_m_tit">청구할인 카드 안내</h1>
+                            </div>
+                            <div class="popup_m_body">
+                                <div class="cardTip_cont_item">
+                                    <div class="cardTip_cont_txt1">신한카드 5% 청구할인</div>
+                                    <div class="cardTip_cont_txt2">
+                                        <p>- 5만원 이상 결제 시</p>
+                                        <p>- 기간 : 2016.06.1 ~ 2016.12.31</p>
+                                    </div>
+                                </div>
+                                <div class="cardTip_cont_item">
+                                    <div class="popup_m_txt1 cardTip_cont_txt1">하나카드 7% 할인</div>
+                                    <div class="popup_m_txt2 cardTip_cont_txt2">
+                                        <p>청구할인 예정가 16,000원</p>
+                                    </div>
+                                </div>
+                                <div class="cardTip_cont_item">
+                                    <div class="cardTip_cont_txt1">NH농협카드 7% 할인<span class="cardTip_cont_txt2">(1만원 이상)</span></div>
+                                    <div class="cardTip_cont_txt2">
+                                        <p>청구할인 예정가 16,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="btn_pop_close">닫기</a>
+                        </div>
+                        <!-- //popCardTip -->
                         <!-- 청구할인 프로모션 2개 이상 -->
                         <div class="cardTip_item">
                             <div class="icon_card"></div>
@@ -275,7 +338,7 @@
                             </div>
                         </div>
                         <!-- 청구할인 프로모션 2개 이상 상세 -->
-						<div id="cardTipCont" class="cardTip_cont">
+						<div class="cardTip_cont">
 							<h6 class="cardTip_cont_tit">청구할인</h6>
 							<div class="cardTip_cont_info">
 								<div class="cardTip_cont_item">
@@ -1331,7 +1394,37 @@ cardTipCtrl.prototype = {
     }
 } */
 if(jQuery('#cardTip')) {
-	// 카드할인안내 안내 > button click >  popup show
+
+    // 카드할인안내 안내 > button click >  popup show
+   /* jQuery('#cardTip .btn_cardTip').click(function(e){
+        e.preventDefault();
+        jQuery(this).parents('.cardTip_item').addClass('open');
+       
+    });*/
+
+    // 카드할인안내 안내 > button click >  popup show/hide
+    // 청구할인 프로모션 2개 이상 > 버튼 클릭시 > 상세 정보 show/hide
+    jQuery('#cardTip .btn_cardTip, #cardTip .btn_cardTip_multi').click(function(e){
+        e.preventDefault();
+        cardTipCtrl(jQuery(this));
+        /*var cardTipItem = jQuery(this).parents('.cardTip_item'),
+            isOpen = 'open';
+        if(cardTipItem.hasClass(isOpen)){
+            cardTipItem.removeClass(isOpen);
+        } else {
+            cardTipItem.addClass(isOpen);
+        }*/
+    });
+    // 카드할인안내 안내 팝업 > close button click > popup hide
+    jQuery('#cardTip .popup_m .btn_pop_close').click(function(e){
+        e.preventDefault();
+        popupMHide(jQuery(this));
+        //jQuery(this).parents('.popup_m').prev().removeClass('open');
+    }); 
+   
+
+
+	/*// 카드할인안내 안내 > button click >  popup show
 	jQuery('#cardTip .btn_cardTip').click(function(e){
 		e.preventDefault();
 		var popCardTip = new cardTipCtrl();
@@ -1348,7 +1441,7 @@ if(jQuery('#cardTip')) {
 		e.preventDefault();
 		var popCardTip = new cardTipCtrl();
 		popCardTip.multipul(jQuery(this));
-	});
+	});*/
 }
 
 
