@@ -2966,6 +2966,7 @@ body.video_pop_open .video_pop{visibility: visible}
 	.bt-clse .ico-comm {
 		width: 15px; height: 15px;
 		background-position: -236px 0;
+		pointer-events:none;
 	}
 .bt-txt {
 

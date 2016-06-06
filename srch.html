@@ -14,6 +14,9 @@
 <title>검색 | 신세계TV쇼핑</title>
 <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css">
 <link rel="stylesheet" type="text/css" href="common.css"> 
+<style>
+	.srch-suggest-a .bt-clse {background: gray;}
+</style>
 </head>
 <body>
 <div class="skip_navi">
@@ -45,35 +48,35 @@
 				</h3>
 				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 --> 
 					<ul class="srch-suggest-lst">
-						<li data-srch-rank='1' class="srch-suggest-item">
+						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a">
 								<p class="srch-suggest-txt">여유</p>
 								<span class="srch-suggest-date">05.28</span>
-								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
-						<li data-srch-rank='2' class="srch-suggest-item">
+						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
 								<span class="srch-suggest-date">05.16</span>
-								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
-						<li data-srch-rank='3' class="srch-suggest-item">
+						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
 								<span class="srch-suggest-date">05.01</span>
-								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
-						<li data-srch-rank='4' class="srch-suggest-item">
+						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
 								<span class="srch-suggest-date">04.27</span>
-								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
-						<li data-srch-rank='5' class="srch-suggest-item">
+						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
 								<span class="srch-suggest-date">03.18</span>
-								<button type="button" class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+								<button type="button" data-rol='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
 							</a>
 						</li>
 					</ul>
@@ -245,7 +248,17 @@
 	});
 
 	/* 최금검색어 & 인기검색어 > 보이기/가리기 */
-	jQuery('[data-srch-tab] a').click(function(e){
+	document.getElementById('srchSuggest').onclick = function(e){
+		if(!e.target.parentElement.dataset.srchTab) return;
+		e.preventDefault();
+		var tit = e.target.parentElement,
+			isShow = 'is-show';
+		if(!tit.classList.contains(isShow)) {
+			tit.parentElement.getElementsByClassName(isShow)[0].classList.remove(isShow);
+			tit.classList.add(isShow);
+		};
+	};
+	/*jQuery('.srch-suggest-tit a'').click(function(e){
 		e.preventDefault();
 		var tit = jQuery(this).parent('[data-srch-tab]'),
 			isShow = 'is-show';
@@ -253,7 +266,7 @@
 			tit.siblings('.'+isShow).removeClass(isShow);
 			tit.addClass(isShow);
 		}
-	});
+	});*/
 	/*jQuery('.srch-suggest-tit a').click(function(e){
 		e.preventDefault();
 		var tit = jQuery(this).parent('.srch-suggest-tit'),
@@ -267,10 +280,15 @@
 	});*/
 
 	/* 최근 검색어 > 아이템별 삭제 */
-	jQuery('#srchSuggest [data-srch-rank] .bt-clse').click(function(e){
+	document.getElementById('srchRecent').onclick = function(e){
+		if(!(e.target.dataset.rol=='item-del')) return;
+		e.preventDefault();
+		e.target.parentElement.parentElement.remove();
+	};
+	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
 		e.preventDefault();
 		jQuery(this).parents('[data-srch-rank]').remove();
-	});
+	});*/
 	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
 		e.preventDefault();
 		jQuery(this).parents('.srch-suggest-item').remove();
@@ -280,7 +298,7 @@
 	jQuery('#btnDelAll').click(function(e){
 		e.preventDefault();
 		var t = jQuery(this);
-		t.parents('.srch-suggest-area').find('.srch-suggest-lst').remove();
+		t.parent('.bt-area').prev().remove();
 		t.remove();
 	});
 
