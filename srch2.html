@@ -27,6 +27,9 @@
 		max-height: 300px;
 		margin-top:91px;
 	}
+	.bt-area {
+		margin-bottom:15px;
+	}
 </style>
 </head>
 <body>
@@ -266,6 +269,41 @@
 							</a>
 							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
 						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">6<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">세탁기</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">7<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">8<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">9<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">10<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">last 여성복 여성복 여성복 여성복 여성복 여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						</li>
 					</ol>
 				</div>
 				<!-- //인기검색어 -->
@@ -332,6 +370,10 @@
 <script>
 	
 	/* 검색 */
+	var h = $(window).height()-$('#srch').height()-$('.srch-suggest-tit').height() - $('#actionBar').height();
+	$('.srch-suggest-area').each(function(){
+		$(this).css('max-height', h);
+	});
 
 	// 검색 > 검색어 입력 시 > reset button 보이기/가리기
 	$('#srch #srchInput').bind('focusin focusout keyup', function() {
