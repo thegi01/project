@@ -26,7 +26,8 @@
 	.srch-suggest-area {
 		position: relative; z-index: 1;
 		overflow-y:auto;
-		margin-top:91px;
+		margin-top:91px; margin-bottom:57px;
+
 	}
 	.bt-area {
 		margin-bottom:15px;
@@ -371,13 +372,13 @@
 <script>
 	
 	/* 검색 */
-	var srchSetH = function(){
+	/*var srchSetH = function(){
 		var h = $(window).height()-$('#srch').height()-$('.srch-suggest-tit').height() - $('#actionBar').height();
 		$('.srch-suggest-area').each(function(){
 			$(this).css('max-height', h);
 		});
 	};
-	srchSetH();
+	srchSetH();*/
 	/*$(window).bind('resize', function(){
 		srchSetH();
 	});*/
