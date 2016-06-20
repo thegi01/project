@@ -25,6 +25,7 @@
 	}
 	.srch-suggest-tit a {
 		position: relative; z-index: 2;
+		pointer-events:inherit;
 	}
 	.srch-suggest-area {
 		position: relative; z-index: 1;
@@ -32,8 +33,7 @@
 		margin-top:91px; margin-bottom:57px;
 	}
 	.srch-suggest-item {
-		z-index: 1;
-		pointer-events:none;
+		z-index: 1;;
 	}
 	
 	.bt-area {
@@ -379,6 +379,9 @@
 <script>
 	
 	/* 검색 */
+	document.getElementById('srch').onclick = function(e){
+		alert(e.target);
+	};
 	/*var srchSetH = function(){
 		var h = $(window).height()-$('#srch').height()-$('.srch-suggest-tit').height() - $('#actionBar').height();
 		$('.srch-suggest-area').each(function(){
