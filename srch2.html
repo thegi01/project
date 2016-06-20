@@ -24,7 +24,6 @@
 	}
 	.srch-suggest-area {
 		overflow-y:auto;
-		max-height: 300px;
 		margin-top:91px;
 	}
 	.bt-area {
@@ -370,9 +369,15 @@
 <script>
 	
 	/* 검색 */
-	var h = $(window).height()-$('#srch').height()-$('.srch-suggest-tit').height() - $('#actionBar').height();
-	$('.srch-suggest-area').each(function(){
-		$(this).css('max-height', h);
+	var srchSetH = function(){
+		var h = $(window).height()-$('#srch').height()-$('.srch-suggest-tit').height() - $('#actionBar').height();
+		$('.srch-suggest-area').each(function(){
+			$(this).css('max-height', h);
+		});
+	};
+	srchSetH();
+	$(window).bind('resize', function(){
+		srchSetH();
 	});
 
 	// 검색 > 검색어 입력 시 > reset button 보이기/가리기
