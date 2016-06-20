@@ -1,0 +1,407 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scable=1.0, maximum-scale=1.0, user-scalable=no" id="viewport">
+<!-- <link rel="apple-touch-icon" href="../../resources_new/img/ios_144x144.png">
+<link rel="apple-touch-icon-precomposed" href="../../resources_new/img/ios_57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../resources_new/img/ios_72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../resources_new/img/ios_114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../resources_new/img/ios_144x144.png">
+<link rel="icon" href="../../resources_new/img/android_144x144.png">
+<link rel="shortcut icon" href="../../resources_new/img/android_144x144.png"> -->
+<title>검색 | 신세계TV쇼핑</title>
+<!-- <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css"> -->
+<link rel="stylesheet" type="text/css" href="common.css"> 
+<style>
+	
+</style>
+</head>
+<body>
+<div class="skip_navi">
+	<a href="#contents">본문 바로가기</a>
+</div>
+<!-- wrap -->
+<div id="wrap" >
+	<!-- container -->
+	<div id="container">
+		<!-- 검색 -->
+		<section class="srch">
+			<h2 class="blind">검색</h2>
+			<!-- 검색어 입력폼 -->
+			<form action="#form" id="srch" class="srch-srch">
+				<a href="#href" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a> <!-- 마크업 변경 -->
+				<fieldset class="srch-field">	
+					<legend>검색어 입력폼</legend>
+					<input type="text" id="srchInput" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+					<button type="button" id="btnSrchClear" class="bt bt-clear"><i class="ico ico-comm">검색어 삭제</i></button>
+					<button type="submit" id="btnSrchSubmit" class="bt bt-srch"><i class="ico ico-layout">검색</i></button>
+				</fieldset>
+			</form>
+			<!-- //검색어 입력폼 -->
+			<!-- 최근검색어 & 인기검색어  -->
+			<div id="srchSuggest" class="srch-suggest">
+				<!-- 최근검색어 -->
+				<h3 class="srch-suggest-tit is-show"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none" data-srch-tab='1'><span>최근검색어</span> </a>
+				</h3>
+				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 --> 
+					<ul data-srch-content="suggest-lst" class="srch-suggest-lst">
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-date">05.28</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
+								<span class="srch-suggest-date">05.16</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-date">05.01</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
+								<span class="srch-suggest-date">04.27</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
+								<span class="srch-suggest-date">03.18</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-date">05.28</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
+								<span class="srch-suggest-date">05.16</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-date">05.01</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
+								<span class="srch-suggest-date">04.27</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
+								<span class="srch-suggest-date">03.18</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-date">05.28</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
+								<span class="srch-suggest-date">05.16</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-date">05.01</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
+								<span class="srch-suggest-date">04.27</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
+								<span class="srch-suggest-date">03.18</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-date">05.28</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">삼성 드럼세탁기 19kg</p>
+								<span class="srch-suggest-date">05.16</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-date">05.01</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">콜핑 등산복</p>
+								<span class="srch-suggest-date">04.27</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a"><p class="srch-suggest-txt">Long text test. Is ellipsis? Long text test. Is ellipsis?</p>
+								<span class="srch-suggest-date">03.18</span>
+								<button type="button" data-srch-btn='item-del' class="bt bt-clse"><i class="ico ico-comm">삭제</i></button>
+							</a>
+						</li>
+					</ul>
+					<div class="bt-area bt-area-center">
+						<button type="button" id="btnDelAll" class="bt bt-txt bt-simple">검색기록 전체삭제</button>
+					</div>
+				</div>
+				<!-- //최근검색어 -->
+				<!-- 인기검색어 -->
+				<h3 class="srch-suggest-tit"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="#none" data-srch-tab='2'><span>인기검색어</span> </a>
+				</h3>
+				<div id="srchPopular" class="srch-suggest-area srch-suggest-popular "> <!-- '인기 검색어'에 'srch-suggest-popular' class 적용, 최근검색어와 비교 : 'gird' class 추가  -->
+					<ol data-srch-content="suggest-lst" class="srch-suggest-lst "> <!-- 최근검색어와 비교 : 'ol' tag, 'col s3' class 추가 -->
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">1<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">2<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">세탁기</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1 number-emph">3<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">4<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+							</a>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">5<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여유</p>
+								<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-up">상승</i></span>
+							</a>
+						</li>
+				
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">6<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">세탁기</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-dn">하락</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">7<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">8<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">9<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">정관장</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-stay">변동없음</i></span>
+						</li>
+						<li class="srch-suggest-item">
+							<a href="#href" class="srch-suggest-a">
+								<span class="number number-ty1">10<i class="blind">위</i></span>
+								<p class="srch-suggest-txt">여성복 여성복 여성복 여성복 여성복 여성복</p>
+							</a>
+							<span class="srch-suggest-flag"><i class="ico ico-flag ico-flag-new">신규</i></span>
+						</li>
+					</ol>
+				</div>
+				<!-- //인기검색어 -->
+			</div>
+			<!-- //최근검색어 & 인기검색어  -->
+		</section>
+		<!-- //검색 -->
+    </div>
+    <!-- //container -->
+   
+
+
+
+    <!-- 액션바영역 -->
+    <div class="floating_top" style="display:none;"><a href="#top">맨위로</a></div>
+	<div class="deem"> </div>
+    <div id="actionBar">
+        <ul>
+            <li><a class="on" href="#"><em class="icon_home"> </em>홈</a></li>
+            <li><a class="blp_open_bt" href="javascript:"><em class="icon_myshop"> </em>카테고리</a></li>
+            <li><a class="" href="javascript:"><em class="icon_cart"> </em>장바구니</a></li>
+            <li><a class="" href="javascript:"><em class="icon_customer"> </em>마이쇼핑</a></li>
+        </ul>
+    </div><!-- //actionBar -->
+	<a href="#" class="bottom_ficon" style="display: none"><span>편성표</span></a>
+    <div class="bottom_layerpop">
+    	<div class="cont">
+	    	<div class="foot_category_wrap cont_box">
+				<div class="title_wrap"> 
+		    		<strong>카테고리를 선택하세요</strong>
+				</div>
+		    	<ul class="category_list2">
+		    		<li class="swiper-slide a20000004"><a href="/dreamshopping/pub/main/category_new.jsp" class="current"><i class="icon"> </i><span>패션</span></a></li>
+		    		<li class="swiper-slide a20000005"><a href="#"><i class="icon"> </i><span>잡화</span></a></li>
+		    		<li class="swiper-slide a20000006"><a href="#"><i class="icon"> </i><span>뷰티</span></a></li>
+		    		<li class="swiper-slide a20000007"><a href="#"><i class="icon"> </i><span>식품</span></a></li>
+		    		<li class="swiper-slide a20000008"><a href="#"><i class="icon"> </i><span>주방</span></a></li>
+		    		<li class="swiper-slide a20000009"><a href="#"><i class="icon"> </i><span>생활</span></a></li>
+		    		<li class="swiper-slide a20000010"><a href="#"><i class="icon"> </i><span>가구/침구</span></a></li>
+		    		<li class="swiper-slide a20000011"><a href="#"><i class="icon"> </i><span>건강/레저</span></a></li>
+		    		<li class="swiper-slide a20000012"><a href="#"><i class="icon"> </i><span>가전</span></a></li>
+		    		<li class="swiper-slide all"><a href="#"><i class="icon"> </i><span>전체</span></a></li>
+		    	</ul>
+			    <a href="javascript:" class="xbtn"><span>카테고리 닫기</span></a>
+		    </div>
+    	</div>
+    </div>
+    <div class="loading_wrap">
+        <div class="layer_dim"> </div>
+        <div id="ui_loading" class="layer_center" data-pop-id="ui_loading">
+            <div class="ui-loading active"><img src="../../resources_new/img/loading.png" alt=""></div>
+        </div>
+    </div>
+    <!-- //액션바영역 -->
+</div>
+<!-- //wrap -->
+<!-- 스크립트 영역 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources_new/js/swiper.js"></script>
+<script type="text/javascript" src="../../resources_new/js/iscroll.js"></script>
+<script type="text/javascript" src="jquery-mobile-ui.js"></script>
+<script type="text/javascript" src="../../resources_new/js/video.min.js"></script>
+<!-- <script type="text/javascript" src="../../resources_new/js/test.js"></script> --><!--로컬 테스트용 절대 배포금지-->
+<script>
+	
+	/* 검색 */
+
+	// 검색 > 검색어 입력 시 > reset button 보이기/가리기
+	$('#srch #srchInput').bind('focusin focusout keyup', function() {
+		var t = jQuery(this),
+			btnSrchClear = t.siblings('#btnSrchClear');
+		if(t.val()){
+			btnSrchClear.show();
+		} else{
+			btnSrchClear.hide();
+		};
+	});
+
+	// 검색 > reset button 클릭 시 > 검색어 reset
+	$('#srch #btnSrchClear').click(function(e) {
+		e.preventDefault();
+		var t = jQuery(this);
+		t.siblings('#srchInput').val('').focus();
+		t.hide();
+	});
+
+	// 최근검색어 & 인기검색어 > 보이기/가리기 
+	document.getElementById('srchSuggest').onclick = function(e){
+		e.preventDefault();
+		if( !(e.target.dataset.srchTab) ) return;
+		var tit = e.target.parentElement,
+			isShow = 'is-show';
+		if( !tit.classList.contains(isShow) ) {
+			tit.parentElement.getElementsByClassName(isShow)[0].classList.remove(isShow);
+			tit.classList.add(isShow);
+		};
+	};
+	/*jQuery('.srch-suggest-tit a'').click(function(e){
+		e.preventDefault();
+		var tit = jQuery(this).parent('[data-srch-tab]'),
+			isShow = 'is-show';
+		if(!tit.hasClass(isShow)) {
+			tit.siblings('.'+isShow).removeClass(isShow);
+			tit.addClass(isShow);
+		}
+	});*/
+	/*jQuery('.srch-suggest-tit a').click(function(e){
+		e.preventDefault();
+		var tit = jQuery(this).parent('.srch-suggest-tit'),
+			isShow = 'is-show';
+		if(tit.hasClass(isShow)) {
+			return;
+		} else {
+			tit.siblings('.'+isShow).removeClass(isShow);
+			tit.addClass(isShow);
+		}
+	});*/
+
+	// 최근 검색어 > 아이템별 삭제 
+	document.getElementById('srchRecent').onclick = function(e){
+		e.preventDefault();
+		if( !(e.target.dataset.srchBtn == 'item-del') ) return;
+		e.target.parentElement.parentElement.remove();
+	};
+	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
+		e.preventDefault();
+		jQuery(this).parents('[data-srch-rank]').remove();
+	});*/
+	/*jQuery('#srchSuggest .srch-suggest-item .bt-clse').click(function(e){
+		e.preventDefault();
+		jQuery(this).parents('.srch-suggest-item').remove();
+	});*/
+
+	// 최근 검색어 > 검색기록 전체 삭제 
+	jQuery('#srchRecent #btnDelAll').click(function(e){
+		e.preventDefault();
+		var t = jQuery(this);
+		t.parents('#srchRecent').find('[data-srch-content]').remove();
+		t.remove();
+		/*if(t.parent().prev().dataset.srchContent == 'suggest-lst') {
+			t.parent().prev().remove();
+			t.remove();
+		}*/
+		
+	});
+
+</script>
+<!-- //스크립트 영역 -->
+</body>
+</html>
