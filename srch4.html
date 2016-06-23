@@ -15,8 +15,13 @@
 <!-- <link rel="stylesheet" type="text/css" href="../../resources_new/css/swiper.min.css"> -->
 <link rel="stylesheet" type="text/css" href="common.css"> 
 <style>
+	.nav-tab {
+		position: fixed; top:50px; right: 0; left:0; z-index: 11;
+		height: 41px;
+	}
 	.srch-suggest-tit {
-		left:0; right:0; z-index: 11;
+		position: static;
+		float: left;
 	}
 </style>
 </head>
@@ -42,13 +47,20 @@
 				</fieldset>
 			</form>
 			<!-- //검색어 입력폼 -->
+			<!-- Tab Menu -->
+			<div class="nav-tab">
+				<h3 id="tab1" class="srch-suggest-tit is-show--"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="javascript:"><span>최근검색어</span> </a>
+				</h3>
+				<h3 id="tab2" class="srch-suggest-tit is-show-"> <!-- 활성화 tab에 'is-show' 추가 -->
+					<a href="javascript:"><span>인기검색어</span> </a>
+				</h3>
+			</div>
+			<!-- //Tab Menu -->
 			<!-- 최근검색어 & 인기검색어  -->
 			<div id="srchSuggest" class="srch-suggest">
 				<!-- 최근검색어 -->
-				<h3 class="srch-suggest-tit is-show"> <!-- 활성화 tab에 'is-show' 추가 -->
-					<a href="javascript:"><span>최근검색어</span> </a>
-				</h3>
-				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 -->
+				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent" style="display:block"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 -->
 					<ul class="srch-suggest-lst">
 						<li class="srch-suggest-item">
 							<a href="#href" class="srch-suggest-a">
@@ -197,9 +209,6 @@
 				</div>
 				<!-- //최근검색어 -->
 				<!-- 인기검색어 -->
-				<h3 class="srch-suggest-tit"> <!-- 활성화 tab에 'is-show' 추가 -->
-					<a href="javascript:"><span>인기검색어</span></a>
-				</h3>
 				<div id="srchPopular" class="srch-suggest-area srch-suggest-popular"> <!-- '인기 검색어'에 'srch-suggest-popular' class 적용 -->
 					<ol class="srch-suggest-lst"> 
 						<li class="srch-suggest-item">
