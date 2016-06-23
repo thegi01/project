@@ -3308,6 +3308,7 @@ body.video_pop_open .video_pop{visibility: visible}
 	position: relative; z-index: 1;;
 	height: 40px;
 	border-bottom: solid 1px #f2f2f2; 
+	pointer-events: none;
 	}
 	.srch-suggest-lst.col:nth-child(even) .srch-suggest-item {
 		padding-left: 10px;
@@ -3323,6 +3324,7 @@ body.video_pop_open .video_pop{visibility: visible}
 	display: block;
 	white-space: nowrap;
 	height: 100%; 
+	pointer-events:auto;
 	}
 	.srch-suggest-recent .srch-suggest-a { /* 최근검색어 */
 		margin-right: 68px;
