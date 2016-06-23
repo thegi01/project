@@ -24,7 +24,7 @@
 	.nav-tab {
 		position: fixed; top:0; right: 0; left:0; z-index: 11;
 		height: 40px;
-		border-top:50px solid transparent;
+		border-top:50px solid #fff;
 		border-bottom:5px solid transparent;
 	}
 	.srch-suggest {
@@ -73,16 +73,18 @@
 	            <button type="button" class="btn_back" onclick="javascript:history.back();">이전</button>
 	            <span class="btn_home"><a href="javascript:goPage('/index');">홈</a></span>
 	        </header> -->
-
-			<form action="#form" id="srch" class="srch-srch">
-				<a href="javascript:history.back();" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a>
-				<fieldset class="srch-field">
-					<legend>검색어 입력폼</legend>
-					<input type="text" id="srchInput" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
-					<button type="button" id="btnSrchClear" class="bt bt-srch-reset"><i class="ico ico-comm ico-reset">검색어 삭제</i></button>
-					<button type="submit" id="btnSrchSubmit" class="bt bt-srch"><i class="ico ico-layout">검색</i></button>
-				</fieldset>
-			</form>
+			<div class="srch-srch">
+				<form action="#form" id="srch">
+					<a href="javascript:history.back();" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a>
+					<fieldset class="srch-field">
+						<legend>검색어 입력폼</legend>
+						<input type="text" id="srchInput" class="input-srch" name="keyword" autocomplete="off" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+						<button type="button" id="btnSrchClear" class="bt bt-srch-reset"><i class="ico ico-comm ico-reset">검색어 삭제</i></button>
+						<button type="submit" id="btnSrchSubmit" class="bt bt-srch"><i class="ico ico-layout">검색</i></button>
+					</fieldset>
+				</form>
+			</div>
+			
 			<!-- //검색어 입력폼 -->
 			<!-- Tab Menu -->
 			<!--  <div style="position:fixed; top:20%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
