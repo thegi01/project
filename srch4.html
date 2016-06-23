@@ -33,7 +33,7 @@
 		position: static;
 	}
 	.srch-suggest-item {
-		position: static;
+		/*position: static;*/
 		/*z-index: inherit;*/
 	}
 	/*.srch-suggest-a {
@@ -49,7 +49,7 @@
 	<a href="#contents">본문 바로가기</a>
 </div>
 <!-- wrap -->
-<div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
+<!-- <div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;"> -->
 </div>
 <div id="wrap" >
 	<!-- container -->
@@ -59,7 +59,12 @@
 			<h2 class="blind">검색</h2>
 			<!-- 검색어 입력폼 -->
 			<header class="sub_header">
-
+				<h3 id="tab1" class="srch-suggest-tit is-show"> 
+					<a href="javascript:"><span>최근검색어</span> </a>
+				</h3>
+				<h3 id="tab2" class="srch-suggest-tit">
+					<a href="javascript:"><span>인기검색어</span> </a>
+				</h3>
 	            <!-- <h1>상품보기</h1>
 	            <button type="button" class="btn_back" onclick="javascript:history.back();">이전</button>
 	            <span class="btn_home"><a href="javascript:goPage('/index');">홈</a></span> -->
