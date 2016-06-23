@@ -49,8 +49,8 @@
 	<a href="#contents">본문 바로가기</a>
 </div>
 <!-- wrap -->
-<div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
-</div>
+<div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;"> </div>
+<a href="#href" style="position:fixed; top:15%; left:30px; right:30px; height:100px; background-color:gray; z-index:1;"> </a>
 <div id="wrap" >
 	<!-- container -->
 	<div id="container">
@@ -63,7 +63,7 @@
 	            <button type="button" class="btn_back" onclick="javascript:history.back();">이전</button>
 	            <span class="btn_home"><a href="javascript:goPage('/index');">홈</a></span>
 	        </header> -->
-			<form action="#form" id="srch" class="srch-srch">
+			<form action="#form" id="srch" class="srch-srch" style="display:none">
 				<a href="javascript:history.back();" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a>
 				<fieldset class="srch-field">
 					<legend>검색어 입력폼</legend>
@@ -74,7 +74,7 @@
 			</form>
 			<!-- //검색어 입력폼 -->
 			<!-- Tab Menu -->
-			<div class="nav-tab">
+			<div class="nav-tab" style="display:none">
 				<h3 id="tab1" class="srch-suggest-tit is-show"> 
 					<a href="javascript:"><span>최근검색어</span> </a>
 				</h3>
@@ -85,7 +85,7 @@
 
 			<!-- //Tab Menu -->
 			<!-- 최근검색어 & 인기검색어  -->
-			<div id="srchSuggest" class="srch-suggest">
+			<div id="srchSuggest" class="srch-suggest" style="display:none">
 				<!-- 최근검색어 -->
 				<div id="srchRecent" class="srch-suggest-area srch-suggest-recent" style="display:block"> <!-- '최근 검색어'에 'srch-suggest-recent' class 적용 -->
 					<ul class="srch-suggest-lst">
