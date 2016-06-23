@@ -23,7 +23,8 @@
 		position: static;
 	}
 	.srch-suggest-tit {
-		position: absolute; top: 0; z-index: 10;
+		float: left; width:50%;
+		position: static;
 	}
 	.srch-suggest-tit a {
 		z-index: 20;
@@ -49,10 +50,10 @@
 	<a href="#contents">본문 바로가기</a>
 </div>
 <!-- wrap -->
-<div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
+<!-- <div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
 	<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu1</a>
 	<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu2</a>
-</div>
+</div> -->
 <!-- <a href="#href" style="position:fixed; top:15%; left:30px; right:30px; height:100px; background-color:gray; z-index:1;"> </a> -->
 <div id="wrap" >
 	<!-- container -->
@@ -77,7 +78,7 @@
 			</form>
 			<!-- //검색어 입력폼 -->
 			<!-- Tab Menu -->
-			<div class="nav-tab" style="display:none">
+			<div class="nav-tab">
 				<h3 id="tab1" class="srch-suggest-tit is-show"> 
 					<a href="javascript:"><span>최근검색어</span> </a>
 				</h3>
