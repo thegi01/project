@@ -22,9 +22,13 @@
 		z-index: 10;	
 	}
 	.nav-tab {
-		position: fixed; top:0; right: 0; left:0; z-index: 11;
+		position: relative; z-index: 20;
+
+	}
+	.nav-tab-inner {
+		position: fixed; top:50px; right: 0; left:0; z-index: 11;
 		height: 40px;
-		border-top:50px solid #fff;
+		/*border-top:50px solid #fff;*/
 		border-bottom:5px solid transparent;
 	}
 	.srch-suggest {
@@ -92,12 +96,14 @@
 				<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu2</a>
 			</div> -->
 			<div class="nav-tab">
-				<h3 id="tab1" class="srch-suggest-tit is-show"> 
-					<a href="javascript:"><span>최근검색어</span> </a>
-				</h3>
-				<h3 id="tab2" class="srch-suggest-tit">
-					<a href="javascript:"><span>인기검색어</span> </a>
-				</h3>
+				<div class="nav-tab-inner">
+					<h3 id="tab1" class="srch-suggest-tit is-show"> 
+						<a href="javascript:"><span>최근검색어</span> </a>
+					</h3>
+					<h3 id="tab2" class="srch-suggest-tit">
+						<a href="javascript:"><span>인기검색어</span> </a>
+					</h3>
+				</div>
 			</div>
 
 			<!-- //Tab Menu -->
