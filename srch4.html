@@ -16,9 +16,10 @@
 <link rel="stylesheet" type="text/css" href="common.css"> 
 <style>
 	.nav-tab {
-		position: fixed; top:0; right: 0; left:0; z-index: 11;
-		height: 100px;
+		position: fixed; top:50px; right: 0; left:0; z-index: 11;
+		height: 40px;
 		border:solid 1px red;
+		margin-bottom: 50px;
 	}
 	.srch-suggest {
 		position: static;
@@ -51,10 +52,7 @@
 	<a href="#contents">본문 바로가기</a>
 </div>
 <!-- wrap -->
-<!-- <div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
-	<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu1</a>
-	<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu2</a>
-</div> -->
+
 <!-- <a href="#href" style="position:fixed; top:15%; left:30px; right:30px; height:100px; background-color:gray; z-index:1;"> </a> -->
 <div id="wrap" >
 	<!-- container -->
@@ -68,7 +66,11 @@
 	            <button type="button" class="btn_back" onclick="javascript:history.back();">이전</button>
 	            <span class="btn_home"><a href="javascript:goPage('/index');">홈</a></span>
 	        </header> -->
-			<form action="#form" id="srch" class="srch-srch" style="display:none">
+	        <div style="position:fixed; top:10%; left:30px; right:30px; height:200px; background-color:gray; z-index:11;">
+				<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu1</a>
+				<a href="#href" style="float:left; width:50%; height:50px; outline:solid 1px red">menu2</a>
+			</div>
+			<form action="#form" id="srch" class="srch-srch">
 				<a href="javascript:history.back();" class="bt bt-back-meph"><i class="ico ico-layout"></i><span>이전</span></a>
 				<fieldset class="srch-field">
 					<legend>검색어 입력폼</legend>
