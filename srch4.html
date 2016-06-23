@@ -366,15 +366,20 @@
 		t.hide();
 	});
 	/* 검색 > 최근검색어 & 인기검색어 > tab click > show/hide */	
-	jQuery('.srch-suggest-tit a').click(function(e){
+	jQuery('.srch-suggest-tit').click(function(e){
 		e.preventDefault();
-		var tit = jQuery(this).parent('.srch-suggest-tit'),
+		var tit = jQuery(this), //srchSuggest
 			isShow = 'is-show';
 		if(!tit.hasClass(isShow)) {
 			tit.siblings('.'+isShow).removeClass(isShow);
 			tit.addClass(isShow);	
-			jQuery(document).scrollTop(0); // 2016.06.21 추가			
+			jQuery(document).scrollTop(0); // 2016.06.21 추가	
+
+			var n = tit.index(jQuery('.srch-suggest-tit'));
+			jQuery('#srchSuggest').find('.srch-suggest-area').hide();
+			jQuery('#srchSuggest').find('.srch-suggest-area').eq(n).show();
 		};
+
 	});
 	/* 검색 > 최근 검색어 > 아이템별 삭제 */
 	jQuery('#srchSuggest .bt-srch-itemDel').click(function(e){
