@@ -22,7 +22,7 @@ caption { overflow: hidden; width: 0; height: 1px; font-size: 0; line-height: 0;
 /*form*/
 input, select, textarea { -webkit-appearance: none; -moz-appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0}
 
-input[type="text"], input[type="password"], input[type="number"], input[type="tel"], input[type="email"], input[type="date"] { color: #666; font-size: 14px; line-height: 140%; letter-spacing: -1px; text-align: left; }
+input[type="text"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], input[type="email"], input[type="date"] { color: #666; font-size: 14px; line-height: 140%; letter-spacing: -1px; text-align: left; }
 
 input { width: 100%; padding: 10px 10px 9px; border: 1px solid #d6d6d6; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; box-sizing: border-box; -webkit-box-sizing: border-box; }
 input::placeholder { color: #aaa; font-size: 12px; }
@@ -37,6 +37,10 @@ input[type="radio"] { width: 24px; height: 24px; padding: 0; border: 0; backgrou
 input[type="radio"]:checked { background-position: -25px -35px; }
 input[type="radio"]:disabled { background-position: -50px -35px; }
 input[type="radio"]:disabled:checked { background-position: -75px -35px; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {display: none;}
 
 select { width: 100%; padding: 9px 25px 8px 10px; border: 1px solid #d6d6d6; background-color: #fff; background-image: url("/resources_new/img/icon_form.png"); background-repeat: no-repeat; background-position: 100% -70px; background-size: 100px auto; color: #666; font-size: 14px; line-height: 140%; vertical-align: middle; }
 select:disabled { /*color:$font-color1; background-color:$background-color1; background-image:none; opacity:1;*/ }
@@ -1557,7 +1561,7 @@ span.order em { margin-right: 2px; color: #666; font-size: 12px}
 .cardTip_item {
 	overflow: hidden;
 	margin-top: 5px; 
-	padding:8.5px 16px;
+	padding:10.5px 18px;
 	border-top:solid 1px #f1f1f1; border-bottom:solid 1px #f1f1f1;
 	text-align:center;
 }
@@ -1582,7 +1586,6 @@ span.order em { margin-right: 2px; color: #666; font-size: 12px}
 	.cardTip .icon_card.card_m { background-position: 0 -304.46px;} /* 2개 이상인 경우 */ 
 .cardTip_info {
 	display:inline-block;
-	margin-right: 5px;
 }
 .cardTip_row {
 	line-height:1;
@@ -2153,10 +2156,11 @@ span.order em { margin-right: 2px; color: #666; font-size: 12px}
 .cart_wrap dl { border-top: 1px solid #ededed; }
 .cart_wrap dl:first-child { border-top: 0; }
 .cart_wrap dl dt.goods_name { overflow: hidden; position: relative; height: 40px; background-color: #f7f7f7; }
-.cart_wrap dl dt.goods_name .form_check { margin: 8px 30px 8px 11px; }
+.cart_wrap dl dt.goods_name .form_check { margin: 8px 38px 8px 11px; }
 .cart_wrap dl dt.goods_name .form_check a,.cart_wrap dl dt.goods_name .form_check span.cart_unclick{display: inline-block;margin: 2px 0 0 32px}
 .cart_wrap dl dt.goods_name .form_check label { overflow: hidden; height: 20px; color: #333; font-size: 15px; word-wrap: break-word;margin: 0 }
-.cart_wrap dl dt.goods_name .icon_del { position: absolute; top: 50%; right: 2px; margin-top: -15px; }
+.cart_wrap dl dt.goods_name .icon_del { position: absolute; top: 50%; right: 8px; margin-top: -15.5px; }
+.cart_wrap dl dt.goods_name .icon_del button {width: 25px; height:25px; background-position: -37.5px -107.5px;  margin:3px;}
 .cart_wrap dl dd .order_goods > li { padding: 15px 11px; }
 .cart_wrap dl dd .goods_wrap { min-height: 82px; padding-left: 96px; }
 .cart_wrap dl dd .goods_soldout { width: 82px; height: 82px; }
@@ -3216,21 +3220,22 @@ body.video_pop_open .video_pop{visibility: visible}
 	padding-right:60px;
 	background-color: #fff;
 }
+.input-srch[type="search"],
 .input-srch[type="text"] {
 	width: 100%; height: 40px;
-	padding:2px 0 0 10px; 
+	padding:3px 0 0 10px; 
 	border: none; -webkit-border-radius: 0; border-radius: 0;
 	outline:0;
 	background-color: transparent;
-	font-size: 16px; color: #666; line-height: 140%; letter-spacing: 0;
+	font-size: 18px; color: #333; line-height: 140%; letter-spacing: 0;
 	/*-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;*/
 	}
 	.input-srch::-webkit-input-placeholder {
-		
+		font-size:16px;
 	}
-	.input-srch:focus::-webkit-input-placeholder {
+	/* .input-srch:focus::-webkit-input-placeholder {
 		color:transparent;
-	}
+	} */	
 .bt-srch-reset {
 	display: none;
 	position: absolute; top:50%; right:40px;
@@ -3255,32 +3260,28 @@ body.video_pop_open .video_pop{visibility: visible}
 	position: relative;
 }
 .srch-suggest-tit {
+	display:block;
 	position: fixed; top: 50px; z-index: 2;
 	width: 50%; height: 40px;
 	background: #fff;
 	border-bottom: solid 1px #d7d7d7;
 	}
-	/* .srch-suggest-tit:before {
-		content:'';
-		position:absolute; top:0; right:0; bottom:0;
-		width:100%; height:100%;
-		background-color:#fff;
-	} */
 	.srch-suggest-tit:nth-of-type(2) {
 		left: 50%;
 	}
 	.srch-suggest-tit a {
-		position: relative; z-index: 2;
 		display: block;
-		width:100%; height: 100%;		
+		position: relative; z-index: 2;		
+		height: 100%;	
+		background-color:#fff;	
 		font-size: 15px; color:#666; text-align: center; line-height: 1;
 	}
 	.srch-suggest-tit.is-show a {
-		color: #ec393f;
+		color: #ec393f;		
 	}
-	.srch-suggest-tit span {
-		position: relative; bottom: -1px;
+	.srch-suggest-tit span {		
 		display: inline-block;
+		position: relative; bottom: -1px;
 		height: 100%;
 		padding-top: 13.5px; padding-left: 10px; padding-right: 10px; line-height: 1;
 		border-bottom: solid 3px transparent;
@@ -3295,7 +3296,7 @@ body.video_pop_open .video_pop{visibility: visible}
 	display: none;
 	position: relative; z-index: 1;
 	margin-top:91px; margin-bottom:57px;
-	padding-right: 16px; padding-left: 16px;	
+	padding-right: 16px; padding-left: 16px;
 	}
 	.srch-suggest-tit.is-show + .srch-suggest-area {display: block;}
 .srch-suggest-lst {
@@ -3308,7 +3309,6 @@ body.video_pop_open .video_pop{visibility: visible}
 	position: relative; z-index: 1;;
 	height: 40px;
 	border-bottom: solid 1px #f2f2f2; 
-	pointer-events: none;
 	}
 	.srch-suggest-lst.col:nth-child(even) .srch-suggest-item {
 		padding-left: 10px;
@@ -3321,10 +3321,9 @@ body.video_pop_open .video_pop{visibility: visible}
 		border-left: solid 1px #f2f2f2;
 	} */
 .srch-suggest-a {
-	display: block;
+	display: block;	
 	white-space: nowrap;
 	height: 100%; 
-	pointer-events:auto;
 	}
 	.srch-suggest-recent .srch-suggest-a { /* 최근검색어 */
 		margin-right: 68px;
@@ -3343,29 +3342,10 @@ body.video_pop_open .video_pop{visibility: visible}
 	pointer-events:none;
 }
 .bt-srch-itemDel {
-	position: absolute; top: 15px; right: 5px;
+	position: absolute; top: 13px; right: 3px;
+	padding:2px;
 	font-size: 0; line-height: 1;
 }
-/* .srch-suggest-pr {
-	position: absolute; top: 50%; right: 10px;
-	margin-top: -8.5px;
-	line-height: 15px;
-}
-.srch-suggest-date {
-	margin-right: 4.5px;
-	font-weight: bold; font-size: 11px; color:#999; vertical-align: top; line-height: 1.7;
-}
-.srch-suggest-pr .bt-clse {
-	font-size: 0; 
-}
-.srch-suggest-area .bt-area {
-	margin-top: 15px;
-}
-.srch-suggest-flag {
-	position: absolute; top: 50%; right: 10px;
-	margin-top: -3.75px;
-	line-height: 0;
-} */
 .srch-suggest-date {
 	position: absolute; top: 15px; right: 25px;
 	font-size: 13px; color:#999; line-height: 1;
